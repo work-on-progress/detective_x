@@ -1,0 +1,421 @@
+{
+  "schema_version": 1,
+  "case_id": 10,
+  "title": "The Bidder in the Room",
+  "subtitle": "A sealed tender that leaked",
+  "difficulty": "Hard",
+  "culprit_id": "priyanka",
+  "setting": "Northgate City Council",
+  "crime": "Corruption",
+  "window": "Over three weeks",
+  "briefing": "A construction contract worth eleven million is awarded to a bidder who undercut the nearest rival by four thousand pounds. The tenders were sealed and held in a safe until the opening. The margin is too fine to be coincidence, and an anonymous complaint alleges the winning bidder saw a rival figure in advance.",
+  "solution": "Priyanka Basu, the procurement officer, photographed the rival submission during the compliance check that only she performed, and passed the figure through her brother-in-law who works for the winning bidder. The safe access log that implicated the committee chair was a legitimate audit inspection, and the consultant's late-night building entry was for an unrelated project.",
+  "topics": {
+    "safe": "access to the safe",
+    "compliance": "the compliance check",
+    "contact": "contact with the bidders"
+  },
+  "suspects": [
+    {
+      "id": "priyanka",
+      "name": "Priyanka Basu",
+      "age": 36,
+      "occupation": "Procurement officer",
+      "relation": "Ran the tender process",
+      "motive": "Sole custody of the submissions during the compliance check.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Priyanka's work phone",
+        "Priyanka's lanyard"
+      ],
+      "statements": [
+        {
+          "topic": "safe",
+          "claim": "logged",
+          "question": "Who accessed the safe?",
+          "text": "Only as logged. The log is the whole point of the log."
+        },
+        {
+          "topic": "compliance",
+          "claim": "standard",
+          "question": "Describe the compliance check.",
+          "text": "Standard. Envelopes opened, forms checked for completeness, resealed.",
+          "is_lie": true
+        },
+        {
+          "topic": "contact",
+          "claim": "none",
+          "question": "Any contact with the bidders?",
+          "text": "None outside the formal clarification process. That would be improper.",
+          "unlocked_by": "e08",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "chair",
+      "name": "Councillor Ray Hollis",
+      "age": 61,
+      "occupation": "Committee chair",
+      "relation": "Chaired the award",
+      "motive": "His access card opened the safe room out of hours.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Ray's access card"
+      ],
+      "statements": [
+        {
+          "topic": "safe",
+          "claim": "audit",
+          "question": "Who accessed the safe?",
+          "text": "I attended an audit inspection. It was booked, witnessed and minuted."
+        },
+        {
+          "topic": "compliance",
+          "claim": "not_present",
+          "question": "Describe the compliance check.",
+          "text": "I am not present for that. Members are kept out of it deliberately."
+        },
+        {
+          "topic": "contact",
+          "claim": "declared",
+          "question": "Any contact with the bidders?",
+          "text": "I declared a social contact with one director eight months ago. It is on the register."
+        }
+      ]
+    },
+    {
+      "id": "consultant",
+      "name": "Fiona Marr",
+      "age": 44,
+      "occupation": "External consultant",
+      "relation": "Advised on the specification",
+      "motive": "Entered the building at 10:40 PM during the tender window.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Fiona's visitor pass"
+      ],
+      "statements": [
+        {
+          "topic": "safe",
+          "claim": "no_access",
+          "question": "Who accessed the safe?",
+          "text": "I have no safe access. I am not staff."
+        },
+        {
+          "topic": "compliance",
+          "claim": "not_present",
+          "question": "Describe the compliance check.",
+          "text": "Not my role. I wrote the specification and left."
+        },
+        {
+          "topic": "contact",
+          "claim": "professional",
+          "question": "Any contact with the bidders?",
+          "text": "I have worked with two of them on other schemes. All declared."
+        }
+      ]
+    },
+    {
+      "id": "clerk",
+      "name": "Dermot Quill",
+      "age": 29,
+      "occupation": "Committee clerk",
+      "relation": "Minutes the meetings",
+      "motive": "Handled the envelopes between the safe and the committee room.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Dermot's satchel"
+      ],
+      "statements": [
+        {
+          "topic": "safe",
+          "claim": "escorted",
+          "question": "Who accessed the safe?",
+          "text": "I carry the envelopes, always escorted, always signed."
+        },
+        {
+          "topic": "compliance",
+          "claim": "not_present",
+          "question": "Describe the compliance check.",
+          "text": "I hand them over and I get them back. I do not open anything."
+        },
+        {
+          "topic": "contact",
+          "claim": "none",
+          "question": "Any contact with the bidders?",
+          "text": "None whatsoever."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "safe",
+      "name": "Tender Safe Room",
+      "icon": "[S]",
+      "description": "One safe, one card reader, and a log that is taken very seriously.",
+      "searchables": [
+        {
+          "id": "safelog",
+          "label": "Read the safe access log",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "Three accesses in the window, all logged."
+        },
+        {
+          "id": "audit",
+          "label": "Check the audit booking",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Booked, witnessed and minuted."
+        }
+      ]
+    },
+    {
+      "id": "compliance",
+      "name": "Compliance Room",
+      "icon": "[C]",
+      "description": "Where sealed envelopes are opened, checked and resealed by one person alone.",
+      "searchables": [
+        {
+          "id": "envelopes",
+          "label": "Examine the resealed envelopes",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "One reseal is not quite square."
+        },
+        {
+          "id": "cctvc",
+          "label": "Review the compliance room camera",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "The camera faces the door, not the table."
+        },
+        {
+          "id": "desk",
+          "label": "Search the desk",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "A phone stand, angled at the table."
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Council Network",
+      "icon": "[N]",
+      "description": "Where every device that touches the building leaves a trace.",
+      "searchables": [
+        {
+          "id": "uploads",
+          "label": "Trace outbound transfers",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "One image upload at 4:12 PM."
+        },
+        {
+          "id": "devices",
+          "label": "Identify the device",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "A work phone, in the compliance room."
+        }
+      ]
+    },
+    {
+      "id": "registers",
+      "name": "Interests Register",
+      "icon": "[I]",
+      "description": "Declared relationships, and the ones that were not declared.",
+      "searchables": [
+        {
+          "id": "declared",
+          "label": "Read the declared interests",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "Two declarations, both current."
+        },
+        {
+          "id": "undeclared",
+          "label": "Cross-check employment records",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "A relative, at the winning bidder."
+        }
+      ]
+    },
+    {
+      "id": "entryrec",
+      "name": "Building Entry Records",
+      "icon": "[E]",
+      "description": "Who came in, when, and on whose pass.",
+      "searchables": [
+        {
+          "id": "late",
+          "label": "Check late entries",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "One at 10:40 PM, and a project code that explains it."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Safe access log",
+      "description": "Three logged accesses to the safe during the tender window.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 12,
+      "implicates": "chair",
+      "is_red_herring": true,
+      "cleared_by": "e02"
+    },
+    {
+      "id": "e02",
+      "name": "Audit booking record",
+      "description": "The chair's access was a booked, witnessed audit inspection.",
+      "type": "DOCUMENT",
+      "reliability": 98,
+      "weight": 0
+    },
+    {
+      "id": "e03",
+      "name": "Imperfect reseal",
+      "description": "One envelope has been opened and resealed slightly out of square.",
+      "type": "PHYSICAL",
+      "reliability": 86,
+      "weight": 22,
+      "implicates": "priyanka"
+    },
+    {
+      "id": "e04",
+      "name": "Compliance room camera",
+      "description": "The camera covers the door but not the working table.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 6
+    },
+    {
+      "id": "e05",
+      "name": "Phone stand on the desk",
+      "description": "A phone stand positioned to view the working table.",
+      "type": "PHYSICAL",
+      "reliability": 78,
+      "weight": 20,
+      "implicates": "priyanka"
+    },
+    {
+      "id": "e06",
+      "name": "Outbound image transfer",
+      "description": "An image was uploaded from the council network at 4:12 PM.",
+      "type": "DIGITAL",
+      "reliability": 95,
+      "weight": 26,
+      "implicates": "priyanka"
+    },
+    {
+      "id": "e07",
+      "name": "Device identification",
+      "description": "The upload came from a work phone assigned to the procurement officer.",
+      "type": "DIGITAL",
+      "reliability": 97,
+      "weight": 30,
+      "implicates": "priyanka"
+    },
+    {
+      "id": "e08",
+      "name": "Undeclared relative",
+      "description": "A relative of the procurement officer is employed by the winning bidder.",
+      "type": "DOCUMENT",
+      "reliability": 94,
+      "weight": 32,
+      "implicates": "priyanka"
+    },
+    {
+      "id": "e09",
+      "name": "Declared interests",
+      "description": "The chair and the consultant have both declared their contacts.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 0
+    },
+    {
+      "id": "e10",
+      "name": "Late building entry",
+      "description": "The consultant entered at 10:40 PM under an unrelated project code.",
+      "type": "DOCUMENT",
+      "reliability": 92,
+      "weight": 18,
+      "implicates": "consultant",
+      "is_red_herring": true,
+      "cleared_by": "e09"
+    },
+    {
+      "id": "e11",
+      "name": "Transfer recipient",
+      "description": "The uploaded image was received by an address at the winning bidder.",
+      "type": "DIGITAL",
+      "reliability": 96,
+      "weight": 34,
+      "implicates": "priyanka",
+      "requires": [
+        "e06",
+        "e08"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "Day 1",
+      "text": "Tenders are received and placed in the safe."
+    },
+    {
+      "time": "Day 4, 10:40 PM",
+      "text": "A consultant enters the building.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "Day 6, 2:00 PM",
+      "text": "The compliance check begins."
+    },
+    {
+      "time": "Day 6, 4:12 PM",
+      "text": "An image is uploaded from the council network.",
+      "hidden": true,
+      "revealed_by": "e06"
+    },
+    {
+      "time": "Day 9",
+      "text": "An audit inspection accesses the safe.",
+      "hidden": true,
+      "revealed_by": "e02"
+    },
+    {
+      "time": "Day 14",
+      "text": "The winning bid is submitted, four thousand pounds under."
+    },
+    {
+      "time": "Day 21",
+      "text": "The contract is awarded."
+    }
+  ],
+  "hints": [
+    "Two people look suspicious and both have paperwork that clears them.",
+    "The camera covers the door. Ask what it does not cover.",
+    "Follow the image, not the envelope."
+  ]
+}

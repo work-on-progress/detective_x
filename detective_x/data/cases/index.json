@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "The Missing Diamond",
+    "subtitle": "Blackwood Mansion, a private party, and an empty case",
+    "difficulty": "Medium",
+    "setting": "Blackwood Mansion",
+    "file": "case_001.json"
+  },
+  {
+    "id": 2,
+    "title": "The Midnight Server Breach",
+    "subtitle": "Valid credentials, an invalid person",
+    "difficulty": "Hard",
+    "setting": "NexaCore Technologies",
+    "file": "case_002.json"
+  },
+  {
+    "id": 3,
+    "title": "The Poisoned Professor",
+    "subtitle": "A departmental meeting, and one cup that mattered",
+    "difficulty": "Expert",
+    "setting": "Halloway University, Department of Chemistry",
+    "file": "case_003.json"
+  },
+  {
+    "id": 4,
+    "title": "Murder at the Rosewood Hotel",
+    "subtitle": "Room 707, locked from the inside",
+    "difficulty": "Hard",
+    "setting": "The Rosewood Hotel, Room 707",
+    "file": "case_004.json"
+  },
+  {
+    "id": 5,
+    "title": "The Vanishing Programmer",
+    "subtitle": "Missing, one day before release",
+    "difficulty": "Hard",
+    "setting": "Arclight Systems",
+    "file": "case_005.json"
+  },
+  {
+    "id": 6,
+    "title": "The Museum Switch",
+    "subtitle": "The frame is right. The painting is not.",
+    "difficulty": "Medium",
+    "setting": "The Ashfield Gallery",
+    "file": "case_006.json"
+  },
+  {
+    "id": 7,
+    "title": "The Anonymous Letters",
+    "subtitle": "Six letters, one hand",
+    "difficulty": "Medium",
+    "setting": "Kerrigan Haulage",
+    "file": "case_007.json"
+  },
+  {
+    "id": 8,
+    "title": "The Midnight Express",
+    "subtitle": "A passenger who was never on board",
+    "difficulty": "Expert",
+    "setting": "The overnight express, Carlisle to Inverness",
+    "file": "case_008.json"
+  },
+  {
+    "id": 9,
+    "title": "The Clinic Ledger",
+    "subtitle": "A drug count that will not reconcile",
+    "difficulty": "Medium",
+    "setting": "St Brendan's Community Clinic",
+    "file": "case_009.json"
+  },
+  {
+    "id": 10,
+    "title": "The Bidder in the Room",
+    "subtitle": "A sealed tender that leaked",
+    "difficulty": "Hard",
+    "setting": "Northgate City Council",
+    "file": "case_010.json"
+  },
+  {
+    "id": 11,
+    "title": "The Understudy",
+    "subtitle": "One rope, one cue, one person who knew both",
+    "difficulty": "Easy",
+    "setting": "The Lyceum Playhouse",
+    "file": "case_011.json"
+  },
+  {
+    "id": 12,
+    "title": "The Kiln Room",
+    "subtitle": "A fire that started twice",
+    "difficulty": "Medium",
+    "setting": "Halden Ceramics Works",
+    "file": "case_012.json"
+  },
+  {
+    "id": 13,
+    "title": "The Sealed Laboratory",
+    "subtitle": "Nobody entered. The sample is still gone.",
+    "difficulty": "Expert",
+    "setting": "Vansi Biosciences, Containment Wing",
+    "file": "case_013.json"
+  },
+  {
+    "id": 14,
+    "title": "The Charity Accounts",
+    "subtitle": "Generosity, audited",
+    "difficulty": "Easy",
+    "setting": "The Rowan Trust",
+    "file": "case_014.json"
+  },
+  {
+    "id": 15,
+    "title": "The Last Broadcast",
+    "subtitle": "Ninety seconds that were never live",
+    "difficulty": "Expert",
+    "setting": "Meridian Radio, Studio 3",
+    "file": "case_015.json"
+  }
+]

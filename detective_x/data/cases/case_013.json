@@ -1,0 +1,432 @@
+{
+  "schema_version": 1,
+  "case_id": 13,
+  "title": "The Sealed Laboratory",
+  "subtitle": "Nobody entered. The sample is still gone.",
+  "difficulty": "Expert",
+  "culprit_id": "unit",
+  "setting": "Vansi Biosciences, Containment Wing",
+  "crime": "Theft of controlled material",
+  "window": "3:00 AM - 3:40 AM",
+  "briefing": "A controlled biological sample is removed from a sealed containment laboratory. The room requires two independent authorisations to open, both of which are logged, and neither was used that night. The internal camera shows an empty room for the entire period. The sample is simply present at 3:00 AM and absent at 3:40 AM.",
+  "solution": "Nobody entered because nobody needed to. Dr Ilse Unterberg had reprogrammed the automated sample-handling arm three days earlier to move the vial into an outgoing waste cassette at 3:12 AM. The camera showed an empty room because the room was empty. She collected the cassette from the loading dock the following morning through an entirely ordinary process nobody thinks to watch.",
+  "topics": {
+    "that_night": "where they were that night",
+    "authorisation": "the two-key authorisation",
+    "arm": "the sample handling arm"
+  },
+  "suspects": [
+    {
+      "id": "unit",
+      "name": "Dr Ilse Unterberg",
+      "age": 46,
+      "occupation": "Principal investigator",
+      "relation": "Wrote the handling routines",
+      "motive": "Her funding was terminated and the sample is the basis of her next application.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Ilse's laptop",
+        "Ilse's access token"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home, asleep. My token has not been used since Tuesday evening."
+        },
+        {
+          "topic": "authorisation",
+          "claim": "unused",
+          "question": "Was the two-key authorisation used?",
+          "text": "It was not. That is the point of it. Nobody opened that room."
+        },
+        {
+          "topic": "arm",
+          "claim": "standard",
+          "question": "Was the handling arm operating?",
+          "text": "It runs a standard maintenance cycle overnight. It always has.",
+          "unlocked_by": "e05",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "name": "Dr Colin Frayne",
+      "age": 52,
+      "occupation": "Biosafety officer",
+      "relation": "Holds one of the two keys",
+      "motive": "Signed off a containment exemption for the sample a week earlier.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Colin's key card"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "on_call",
+          "question": "Where were you that night?",
+          "text": "On call at home. I was not paged and I did not attend."
+        },
+        {
+          "topic": "authorisation",
+          "claim": "unused",
+          "question": "Was the two-key authorisation used?",
+          "text": "No. And it cannot be used singly. That is the whole design."
+        },
+        {
+          "topic": "arm",
+          "claim": "not_my_area",
+          "question": "Was the handling arm operating?",
+          "text": "Robotics is not my discipline. I sign for containment, not code."
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Nuno Ferreira",
+      "age": 31,
+      "occupation": "Automation technician",
+      "relation": "Maintains the handling arm",
+      "motive": "Pushed a firmware update to the arm the same week.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Nuno's service tablet"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home. I have not been on site after six for a fortnight."
+        },
+        {
+          "topic": "authorisation",
+          "claim": "unused",
+          "question": "Was the two-key authorisation used?",
+          "text": "Not according to the log, and I cannot use it at all."
+        },
+        {
+          "topic": "arm",
+          "claim": "updated",
+          "question": "Was the handling arm operating?",
+          "text": "I pushed a firmware update on the Monday. Routine. The routines on it are not mine."
+        }
+      ]
+    },
+    {
+      "id": "postdoc",
+      "name": "Dr Yara Haddad",
+      "age": 34,
+      "occupation": "Postdoctoral researcher",
+      "relation": "Uses the room daily",
+      "motive": "Would be named on the application the sample supports.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Yara's notebook"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home. I left at seven and my token log will say so."
+        },
+        {
+          "topic": "authorisation",
+          "claim": "unused",
+          "question": "Was the two-key authorisation used?",
+          "text": "No. I checked the log myself when I heard."
+        },
+        {
+          "topic": "arm",
+          "claim": "standard",
+          "question": "Was the handling arm operating?",
+          "text": "It runs overnight. We all assume it does nothing interesting."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "containment",
+      "name": "Containment Laboratory",
+      "icon": "[C]",
+      "description": "Sealed, monitored, and completely empty for the entire period in question.",
+      "searchables": [
+        {
+          "id": "rack",
+          "label": "Examine the sample rack",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "One empty position, and no disturbance around it."
+        },
+        {
+          "id": "camerac",
+          "label": "Review the internal camera",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Forty minutes of an empty room."
+        },
+        {
+          "id": "armlog",
+          "label": "Read the handling arm log",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "One movement, at 3:12 AM."
+        }
+      ]
+    },
+    {
+      "id": "authroom",
+      "name": "Authorisation Control",
+      "icon": "[A]",
+      "description": "The two-key system, and a log that has never been wrong.",
+      "searchables": [
+        {
+          "id": "keylog",
+          "label": "Read the authorisation log",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "No authorisation on the night in question."
+        },
+        {
+          "id": "tokens",
+          "label": "Check the access tokens",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "Nobody's token was used after Tuesday."
+        }
+      ]
+    },
+    {
+      "id": "robotics",
+      "name": "Robotics Bay",
+      "icon": "[R]",
+      "description": "Where the arm's routines are written, versioned and signed.",
+      "searchables": [
+        {
+          "id": "routines",
+          "label": "Examine the routine history",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "A routine amended three days before."
+        },
+        {
+          "id": "firmware",
+          "label": "Check the firmware push",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "Routine, versioned, and unrelated to the routines."
+        },
+        {
+          "id": "signature",
+          "label": "Check the routine signatures",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "One amendment signed by a research account."
+        }
+      ]
+    },
+    {
+      "id": "dock",
+      "name": "Loading Dock",
+      "icon": "[L]",
+      "description": "Where waste cassettes leave the building, watched by nobody in particular.",
+      "searchables": [
+        {
+          "id": "cassette",
+          "label": "Trace the waste cassettes",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "One cassette collected by hand, out of sequence."
+        },
+        {
+          "id": "dockcam",
+          "label": "Review the dock camera",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "A collection at 8:40 AM, entirely ordinary."
+        }
+      ]
+    },
+    {
+      "id": "grants",
+      "name": "Grants Office",
+      "icon": "[G]",
+      "description": "Applications, terminations, and the dates that connect them.",
+      "searchables": [
+        {
+          "id": "funding",
+          "label": "Read the funding record",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "One termination, and one application in preparation."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Empty rack position",
+      "description": "The sample position is empty with no sign of disturbance.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 6
+    },
+    {
+      "id": "e02",
+      "name": "Empty room footage",
+      "description": "The internal camera shows an empty laboratory throughout.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 8
+    },
+    {
+      "id": "e03",
+      "name": "Handling arm movement",
+      "description": "The arm executed one movement at 3:12 AM.",
+      "type": "DIGITAL",
+      "reliability": 99,
+      "weight": 20,
+      "implicates": "unit"
+    },
+    {
+      "id": "e04",
+      "name": "Unused authorisation log",
+      "description": "No two-key authorisation was recorded that night.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 6
+    },
+    {
+      "id": "e05",
+      "name": "Amended routine",
+      "description": "A handling routine was amended three days before the theft.",
+      "type": "DIGITAL",
+      "reliability": 97,
+      "weight": 28,
+      "implicates": "unit"
+    },
+    {
+      "id": "e06",
+      "name": "Firmware push record",
+      "description": "The technician's firmware update is routine and does not touch routines.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 22,
+      "implicates": "tech",
+      "is_red_herring": true,
+      "cleared_by": "e07"
+    },
+    {
+      "id": "e07",
+      "name": "Routine signature",
+      "description": "The amendment is signed by the principal investigator's research account.",
+      "type": "DIGITAL",
+      "reliability": 98,
+      "weight": 32,
+      "implicates": "unit"
+    },
+    {
+      "id": "e08",
+      "name": "Out-of-sequence cassette",
+      "description": "One waste cassette was collected by hand, out of the normal sequence.",
+      "type": "DOCUMENT",
+      "reliability": 91,
+      "weight": 24,
+      "implicates": "unit"
+    },
+    {
+      "id": "e09",
+      "name": "Token access record",
+      "description": "No access token was used after Tuesday evening.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 0
+    },
+    {
+      "id": "e10",
+      "name": "Dock camera",
+      "description": "A cassette is collected at 8:40 AM by someone with every right to be there.",
+      "type": "DIGITAL",
+      "reliability": 93,
+      "weight": 26,
+      "implicates": "unit"
+    },
+    {
+      "id": "e11",
+      "name": "Funding termination",
+      "description": "The principal investigator's funding was terminated a month earlier.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 18,
+      "implicates": "unit"
+    },
+    {
+      "id": "e12",
+      "name": "Cassette destination",
+      "description": "The collected cassette never reached the waste contractor.",
+      "type": "DOCUMENT",
+      "reliability": 97,
+      "weight": 34,
+      "implicates": "unit",
+      "requires": [
+        "e08",
+        "e10"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "Three days before",
+      "text": "A handling routine is amended.",
+      "hidden": true,
+      "revealed_by": "e05"
+    },
+    {
+      "time": "Two days before",
+      "text": "A routine firmware update is pushed.",
+      "hidden": true,
+      "revealed_by": "e06"
+    },
+    {
+      "time": "03:00 AM",
+      "text": "The sample is confirmed present."
+    },
+    {
+      "time": "03:12 AM",
+      "text": "The handling arm executes one movement.",
+      "hidden": true,
+      "revealed_by": "e03"
+    },
+    {
+      "time": "03:40 AM",
+      "text": "The sample is recorded absent."
+    },
+    {
+      "time": "08:40 AM",
+      "text": "A waste cassette is collected from the loading dock.",
+      "hidden": true,
+      "revealed_by": "e10"
+    }
+  ],
+  "hints": [
+    "Nobody entered the room. Ask what was already inside it.",
+    "The camera showed an empty room because the room was empty.",
+    "Follow the sample out of the building, not the person in."
+  ]
+}

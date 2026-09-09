@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "case_id": 4,
+  "title": "Murder at the Rosewood Hotel",
+  "subtitle": "Room 707, locked from the inside",
+  "difficulty": "Hard",
+  "culprit_id": "irene",
+  "setting": "The Rosewood Hotel, Room 707",
+  "crime": "Murder",
+  "window": "1:10 AM - 2:05 AM",
+  "briefing": "Gerald Payne, a property developer, is found dead in room 707 at seven in the morning. The door is bolted from the inside and the window is sealed. The night manager opened it with the master key after Payne missed a car to the airport. There is one wine glass on the table where the room service docket says there should be two.",
+  "solution": "Irene Falk was in the room as Payne's guest. She left through the connecting door to room 705, which she had booked under her maiden name, and bolted 707 from the inside by reaching through that connecting door before closing it. The missing second glass was in her own room. The elevator record that seemed to clear her only shows the main lift, not the service stair.",
+  "topics": {
+    "night_of": "where they were that night",
+    "glass": "the missing second glass",
+    "connecting": "the connecting door",
+    "leaving": "when they left the hotel"
+  },
+  "suspects": [
+    {
+      "id": "irene",
+      "name": "Irene Falk",
+      "age": 41,
+      "occupation": "Investor",
+      "relation": "Business partner of the victim",
+      "motive": "Stood to lose everything in the partnership dissolution Payne had filed.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Irene's silk scarf",
+        "Irene's room key"
+      ],
+      "statements": [
+        {
+          "topic": "night_of",
+          "claim": "own_room",
+          "question": "Where were you that night?",
+          "text": "In my own room from about midnight. I took the lift up at 11:50.",
+          "is_lie": true
+        },
+        {
+          "topic": "glass",
+          "claim": "unknown",
+          "question": "There should be two glasses. Where is the second?",
+          "text": "How would I know? Perhaps housekeeping took it.",
+          "is_lie": true
+        },
+        {
+          "topic": "connecting",
+          "claim": "locked",
+          "question": "Was the connecting door to 705 in use?",
+          "text": "It was locked. Those doors are always locked.",
+          "unlocked_by": "e05",
+          "is_lie": true
+        },
+        {
+          "topic": "leaving",
+          "claim": "morning",
+          "question": "When did you leave the hotel?",
+          "text": "At seven, like everyone else. I heard the commotion in the corridor."
+        }
+      ]
+    },
+    {
+      "id": "marcus_h",
+      "name": "Marcus Hale",
+      "age": 55,
+      "occupation": "Night manager",
+      "relation": "Found the body",
+      "motive": "Payne had complained about him twice and wanted him dismissed.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Marcus's master key"
+      ],
+      "statements": [
+        {
+          "topic": "night_of",
+          "claim": "front_desk",
+          "question": "Where were you that night?",
+          "text": "At the desk. I did a floor check at one and again at three."
+        },
+        {
+          "topic": "glass",
+          "claim": "unknown",
+          "question": "There should be two glasses. Where is the second?",
+          "text": "The docket says two. I signed it myself. I cannot tell you where it went."
+        },
+        {
+          "topic": "connecting",
+          "claim": "unknown",
+          "question": "Was the connecting door to 705 in use?",
+          "text": "705 was occupied. I would have to check under what name."
+        },
+        {
+          "topic": "leaving",
+          "claim": "shift_end",
+          "question": "When did you leave the hotel?",
+          "text": "Seven fifteen, after the police arrived."
+        }
+      ]
+    },
+    {
+      "id": "dominic",
+      "name": "Dominic Vance",
+      "age": 33,
+      "occupation": "Room service attendant",
+      "relation": "Delivered the wine",
+      "motive": "Payne had him disciplined for an earlier complaint.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Dominic's service jacket"
+      ],
+      "statements": [
+        {
+          "topic": "night_of",
+          "claim": "service_floor",
+          "question": "Where were you that night?",
+          "text": "On the service floor. I took the order up at ten past one and came straight down."
+        },
+        {
+          "topic": "glass",
+          "claim": "two",
+          "question": "There should be two glasses. Where is the second?",
+          "text": "There were two on the tray. I set them both out. Somebody else moved one."
+        },
+        {
+          "topic": "connecting",
+          "claim": "open",
+          "question": "Was the connecting door to 705 in use?",
+          "text": "It was ajar when I came in. I remember because it was odd.",
+          "unlocked_by": "e04"
+        },
+        {
+          "topic": "leaving",
+          "claim": "shift_end",
+          "question": "When did you leave the hotel?",
+          "text": "Six in the morning, end of shift."
+        }
+      ]
+    },
+    {
+      "id": "harriet",
+      "name": "Harriet Payne",
+      "age": 48,
+      "occupation": "The victim's sister",
+      "relation": "Staying on the fifth floor",
+      "motive": "Inherits the controlling share of the family business.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Harriet's overcoat"
+      ],
+      "statements": [
+        {
+          "topic": "night_of",
+          "claim": "own_room",
+          "question": "Where were you that night?",
+          "text": "In 512. I took a sleeping tablet at eleven and heard nothing."
+        },
+        {
+          "topic": "glass",
+          "claim": "unknown",
+          "question": "There should be two glasses. Where is the second?",
+          "text": "I was not in his room. I had not spoken to Gerald in a fortnight."
+        },
+        {
+          "topic": "leaving",
+          "claim": "morning",
+          "question": "When did you leave the hotel?",
+          "text": "I have not left. I am still here, being asked questions."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "room707",
+      "name": "Room 707",
+      "icon": "[7]",
+      "description": "Bolted from within. One glass, one chair pulled out, and a connecting door in the east wall.",
+      "searchables": [
+        {
+          "id": "table",
+          "label": "Examine the table",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "One glass, and a ring of condensation where a second stood."
+        },
+        {
+          "id": "bolt",
+          "label": "Examine the door bolt",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Thrown from inside, with a scuff on the plate."
+        },
+        {
+          "id": "connecting",
+          "label": "Try the connecting door",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "It gives. It is not locked."
+        },
+        {
+          "id": "floor",
+          "label": "Search the floor",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "A thread of pale silk caught in the connecting hinge."
+        }
+      ]
+    },
+    {
+      "id": "room705",
+      "name": "Room 705",
+      "icon": "[5]",
+      "description": "Booked, paid for, and apparently unslept in.",
+      "searchables": [
+        {
+          "id": "register",
+          "label": "Check the booking name",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "A maiden name, and a card that matches another guest."
+        },
+        {
+          "id": "bin705",
+          "label": "Search the room",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "A second wine glass, rinsed but not dried."
+        }
+      ]
+    },
+    {
+      "id": "lobby",
+      "name": "Lobby and Front Desk",
+      "icon": "[L]",
+      "description": "Where the night manager sat and the lift record was kept.",
+      "searchables": [
+        {
+          "id": "lift",
+          "label": "Pull the elevator record",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "Irene up at 11:50 PM, and nothing after."
+        },
+        {
+          "id": "docket",
+          "label": "Find the room service docket",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "One bottle, two glasses, signed at 1:10 AM."
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "name": "Service Stair",
+      "icon": "[S]",
+      "description": "The staff stair between floors, uncovered by the guest lift log.",
+      "searchables": [
+        {
+          "id": "stairdoor",
+          "label": "Check the stair door counter",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A mechanical counter, and one use at 1:42 AM."
+        },
+        {
+          "id": "stairfloor",
+          "label": "Search the stair landing",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "Nothing but dust, and one clean footprint in it."
+        }
+      ]
+    },
+    {
+      "id": "fifth",
+      "name": "Fifth Floor Corridor",
+      "icon": "[F]",
+      "description": "Harriet's floor, and the corridor camera that covers it.",
+      "searchables": [
+        {
+          "id": "camera5",
+          "label": "Review the corridor camera",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "Nobody leaves 512 between eleven and seven."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Single wine glass",
+      "description": "One glass on the table, with a condensation ring where a second stood.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 8
+    },
+    {
+      "id": "e02",
+      "name": "Bolt thrown from inside",
+      "description": "The bolt was thrown from within, with a scuff mark on the strike plate.",
+      "type": "PHYSICAL",
+      "reliability": 98,
+      "weight": 6
+    },
+    {
+      "id": "e03",
+      "name": "Pale silk thread",
+      "description": "A pale silk fibre caught in the hinge of the connecting door.",
+      "type": "PHYSICAL",
+      "reliability": 84,
+      "weight": 22,
+      "implicates": "irene",
+      "matches": [
+        "Irene's silk scarf"
+      ]
+    },
+    {
+      "id": "e04",
+      "name": "Unlocked connecting door",
+      "description": "The connecting door between 707 and 705 is not locked.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 15,
+      "implicates": "irene"
+    },
+    {
+      "id": "e05",
+      "name": "Booking under a maiden name",
+      "description": "Room 705 is booked to I. Marsh, paid with Irene Falk's card.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 28,
+      "implicates": "irene"
+    },
+    {
+      "id": "e06",
+      "name": "The second glass",
+      "description": "A rinsed wine glass in room 705, matching the set from 707.",
+      "type": "PHYSICAL",
+      "reliability": 92,
+      "weight": 26,
+      "implicates": "irene"
+    },
+    {
+      "id": "e07",
+      "name": "Elevator record",
+      "description": "Irene took the guest lift up at 11:50 PM and is not recorded coming down.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 10,
+      "implicates": "marcus_h",
+      "is_red_herring": true,
+      "cleared_by": "e09"
+    },
+    {
+      "id": "e08",
+      "name": "Room service docket",
+      "description": "One bottle and two glasses delivered to 707 at 1:10 AM.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 12,
+      "implicates": "dominic",
+      "is_red_herring": true,
+      "cleared_by": "e06"
+    },
+    {
+      "id": "e09",
+      "name": "Service stair counter",
+      "description": "The stair door counter records one use at 1:42 AM.",
+      "type": "PHYSICAL",
+      "reliability": 88,
+      "weight": 14
+    },
+    {
+      "id": "e10",
+      "name": "Footprint on the landing",
+      "description": "A single clean print in the dust of the service landing.",
+      "type": "PHYSICAL",
+      "reliability": 76,
+      "weight": 12,
+      "implicates": "irene"
+    },
+    {
+      "id": "e11",
+      "name": "Fifth floor camera",
+      "description": "Nobody leaves room 512 between 11 PM and 7 AM.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 0
+    },
+    {
+      "id": "e12",
+      "name": "Partnership dissolution filing",
+      "description": "Payne had filed to dissolve the partnership, leaving Falk exposed.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 30,
+      "implicates": "irene",
+      "requires": [
+        "e05",
+        "e06"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "11:50 PM",
+      "text": "Irene takes the guest lift to the seventh floor."
+    },
+    {
+      "time": "01:10 AM",
+      "text": "Room service delivers one bottle and two glasses to 707."
+    },
+    {
+      "time": "01:14 AM",
+      "text": "The service attendant leaves the floor."
+    },
+    {
+      "time": "01:42 AM",
+      "text": "The service stair door is used once.",
+      "hidden": true,
+      "revealed_by": "e09"
+    },
+    {
+      "time": "01:55 AM",
+      "text": "The connecting door between 707 and 705 is closed.",
+      "hidden": true,
+      "revealed_by": "e04"
+    },
+    {
+      "time": "02:05 AM",
+      "text": "The bolt on 707 is thrown.",
+      "hidden": true,
+      "revealed_by": "e02"
+    },
+    {
+      "time": "03:00 AM",
+      "text": "The night manager completes a floor check."
+    },
+    {
+      "time": "07:00 AM",
+      "text": "Room 707 is opened with the master key."
+    }
+  ],
+  "hints": [
+    "A room bolted from inside is only impossible if there is one way in.",
+    "The docket says two glasses. Find the second one.",
+    "The guest lift is not the only way between floors."
+  ]
+}

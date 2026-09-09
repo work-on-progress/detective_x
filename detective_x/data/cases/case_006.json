@@ -1,0 +1,432 @@
+{
+  "schema_version": 1,
+  "case_id": 6,
+  "title": "The Museum Switch",
+  "subtitle": "The frame is right. The painting is not.",
+  "difficulty": "Medium",
+  "culprit_id": "gregor",
+  "setting": "The Ashfield Gallery",
+  "crime": "Art forgery and theft",
+  "window": "Over four days",
+  "briefing": "A visiting conservator notices that the varnish on the gallery's best-known portrait is wrong for its age. Analysis confirms the canvas on display is a modern replica of considerable quality. The original was last verified eleven days ago. In between, the painting left its wall exactly once, for scheduled restoration work.",
+  "solution": "Gregor Melnyk, the restoration technician, made the substitution during the four days the painting was legitimately in his studio. The replica had been painted over eight months from photographs he took during earlier work. The delivery van that looked suspicious belonged to a genuine framing contractor, and the camera gap was a scheduled maintenance window that had been published internally.",
+  "topics": {
+    "studio_days": "the painting's time in the studio",
+    "van": "the delivery van",
+    "cameras": "the camera gap"
+  },
+  "suspects": [
+    {
+      "id": "gregor",
+      "name": "Gregor Melnyk",
+      "age": 52,
+      "occupation": "Restoration technician",
+      "relation": "Had the painting for four days",
+      "motive": "Sole unsupervised access to the original, and the skill to copy it.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Gregor's apron",
+        "Gregor's studio key"
+      ],
+      "statements": [
+        {
+          "topic": "studio_days",
+          "claim": "routine",
+          "question": "What happened during the four days?",
+          "text": "Routine consolidation of the lower left quadrant. Nothing else.",
+          "is_lie": true
+        },
+        {
+          "topic": "van",
+          "claim": "contractor",
+          "question": "Whose van was at the loading bay?",
+          "text": "The framers. They come every month."
+        },
+        {
+          "topic": "cameras",
+          "claim": "maintenance",
+          "question": "Why was there a camera gap?",
+          "text": "Scheduled maintenance. It was on the internal notice board for weeks."
+        }
+      ]
+    },
+    {
+      "id": "adele",
+      "name": "Adele Fournier",
+      "age": 44,
+      "occupation": "Head curator",
+      "relation": "Authorised the restoration",
+      "motive": "Signed the movement order and holds the only other studio key.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Adele's key ring"
+      ],
+      "statements": [
+        {
+          "topic": "studio_days",
+          "claim": "supervised",
+          "question": "What happened during the four days?",
+          "text": "It was signed in and signed out. I checked it myself on the Friday."
+        },
+        {
+          "topic": "van",
+          "claim": "contractor",
+          "question": "Whose van was at the loading bay?",
+          "text": "Ashfield Framing. They have held our contract for six years."
+        },
+        {
+          "topic": "cameras",
+          "claim": "maintenance",
+          "question": "Why was there a camera gap?",
+          "text": "The upgrade. It was announced. I was in Lyon for all of it."
+        }
+      ]
+    },
+    {
+      "id": "tomas",
+      "name": "Tomas Reyes",
+      "age": 27,
+      "occupation": "Gallery attendant",
+      "relation": "On the floor every day",
+      "motive": "In debt, and has been seen photographing works after hours.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Tomas's phone"
+      ],
+      "statements": [
+        {
+          "topic": "studio_days",
+          "claim": "unknown",
+          "question": "What happened during the four days?",
+          "text": "I would not know. Attendants do not go into the studio."
+        },
+        {
+          "topic": "van",
+          "claim": "unfamiliar",
+          "question": "Whose van was at the loading bay?",
+          "text": "There was one I did not recognise on the Wednesday. No livery on it."
+        },
+        {
+          "topic": "cameras",
+          "claim": "unknown",
+          "question": "Why was there a camera gap?",
+          "text": "Nobody tells me anything about the cameras."
+        }
+      ]
+    },
+    {
+      "id": "nell",
+      "name": "Nell Harkness",
+      "age": 39,
+      "occupation": "Registrar",
+      "relation": "Keeps the movement records",
+      "motive": "Was disciplined last year for falsifying a loan document.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Nell's document case"
+      ],
+      "statements": [
+        {
+          "topic": "studio_days",
+          "claim": "documented",
+          "question": "What happened during the four days?",
+          "text": "In on the Monday, out on the Friday, both signed. I have the sheets."
+        },
+        {
+          "topic": "van",
+          "claim": "contractor",
+          "question": "Whose van was at the loading bay?",
+          "text": "Ashfield Framing, booked and logged. Wednesday, eleven o'clock."
+        },
+        {
+          "topic": "cameras",
+          "claim": "maintenance",
+          "question": "Why was there a camera gap?",
+          "text": "The upgrade window. Published, scheduled, boring."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "gallery",
+      "name": "Main Gallery",
+      "icon": "[G]",
+      "description": "The portrait hangs where it always has, under a light that has not moved in decades.",
+      "searchables": [
+        {
+          "id": "canvas",
+          "label": "Examine the canvas",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "Modern ground, modern varnish, and an old frame."
+        },
+        {
+          "id": "frame",
+          "label": "Examine the frame",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Original. Whoever did this kept the frame."
+        }
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Restoration Studio",
+      "icon": "[T]",
+      "description": "Solvent, raking light, and a bench that has been very carefully cleaned.",
+      "searchables": [
+        {
+          "id": "bench",
+          "label": "Search the bench",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "Pigment traces that should not exist in a conservation studio."
+        },
+        {
+          "id": "photos",
+          "label": "Look through the reference photographs",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "Eight months of raking-light captures."
+        },
+        {
+          "id": "waste",
+          "label": "Search the waste",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "Offcuts of primed modern linen."
+        }
+      ]
+    },
+    {
+      "id": "bay",
+      "name": "Loading Bay",
+      "icon": "[B]",
+      "description": "Where everything enters and leaves, under a camera that mostly works.",
+      "searchables": [
+        {
+          "id": "bookings",
+          "label": "Check the delivery bookings",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "One booked van, and one that was not."
+        },
+        {
+          "id": "baycam",
+          "label": "Review the bay camera",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "Wednesday, eleven o'clock, exactly as booked."
+        }
+      ]
+    },
+    {
+      "id": "records",
+      "name": "Registrar's Office",
+      "icon": "[R]",
+      "description": "Movement sheets, condition reports, and a filing system with opinions.",
+      "searchables": [
+        {
+          "id": "movement",
+          "label": "Read the movement sheets",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "Signed in and out, in two different hands."
+        },
+        {
+          "id": "condition",
+          "label": "Compare the condition reports",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "The Friday report describes a painting that is not this one."
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "name": "Camera Control Room",
+      "icon": "[C]",
+      "description": "The gap in the record, and the paperwork that explains it.",
+      "searchables": [
+        {
+          "id": "gap",
+          "label": "Examine the camera gap",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "Four hours, on the Wednesday."
+        },
+        {
+          "id": "notice",
+          "label": "Find the maintenance notice",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "Circulated three weeks in advance."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Modern canvas ground",
+      "description": "The canvas on the wall uses a ground unavailable before 1960.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 8
+    },
+    {
+      "id": "e02",
+      "name": "Original frame retained",
+      "description": "The frame is authentic, so the swap happened out of the frame.",
+      "type": "PHYSICAL",
+      "reliability": 96,
+      "weight": 10,
+      "implicates": "gregor"
+    },
+    {
+      "id": "e03",
+      "name": "Pigment traces on the bench",
+      "description": "Modern pigments matching the replica, on the studio bench.",
+      "type": "PHYSICAL",
+      "reliability": 93,
+      "weight": 28,
+      "implicates": "gregor"
+    },
+    {
+      "id": "e04",
+      "name": "Eight months of reference photographs",
+      "description": "Raking-light captures of the original, taken long before the restoration.",
+      "type": "DIGITAL",
+      "reliability": 95,
+      "weight": 30,
+      "implicates": "gregor"
+    },
+    {
+      "id": "e05",
+      "name": "Primed linen offcuts",
+      "description": "Offcuts of modern primed linen in the studio waste.",
+      "type": "PHYSICAL",
+      "reliability": 88,
+      "weight": 22,
+      "implicates": "gregor"
+    },
+    {
+      "id": "e06",
+      "name": "Unbooked van",
+      "description": "A van with no livery at the bay on Wednesday, not in the booking sheet.",
+      "type": "DOCUMENT",
+      "reliability": 80,
+      "weight": 20,
+      "implicates": "tomas",
+      "is_red_herring": true,
+      "cleared_by": "e07"
+    },
+    {
+      "id": "e07",
+      "name": "Bay camera footage",
+      "description": "The Wednesday van is Ashfield Framing, on its regular monthly booking.",
+      "type": "DIGITAL",
+      "reliability": 97,
+      "weight": 0
+    },
+    {
+      "id": "e08",
+      "name": "Movement sheets",
+      "description": "The painting was signed into the studio on Monday and out on Friday.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 12,
+      "implicates": "gregor"
+    },
+    {
+      "id": "e09",
+      "name": "Divergent condition report",
+      "description": "The Friday report describes craquelure that the displayed canvas does not have.",
+      "type": "DOCUMENT",
+      "reliability": 94,
+      "weight": 26,
+      "implicates": "gregor"
+    },
+    {
+      "id": "e10",
+      "name": "Camera maintenance gap",
+      "description": "Four hours of no recording on the Wednesday afternoon.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 15,
+      "implicates": "adele",
+      "is_red_herring": true,
+      "cleared_by": "e11"
+    },
+    {
+      "id": "e11",
+      "name": "Maintenance notice",
+      "description": "The camera window was published internally three weeks in advance.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 0
+    },
+    {
+      "id": "e12",
+      "name": "Photograph metadata",
+      "description": "The reference photographs were taken on the studio's own camera, at night.",
+      "type": "DIGITAL",
+      "reliability": 98,
+      "weight": 32,
+      "implicates": "gregor",
+      "requires": [
+        "e04",
+        "e03"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "Day 1, Mon",
+      "text": "The portrait is signed into the restoration studio."
+    },
+    {
+      "time": "Day 3, Wed 11:00",
+      "text": "A framing van uses the loading bay.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "Day 3, Wed 13:00",
+      "text": "The camera maintenance window begins.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "Day 3, Wed 17:00",
+      "text": "The camera maintenance window ends."
+    },
+    {
+      "time": "Day 5, Fri",
+      "text": "The painting is signed out and rehung.",
+      "hidden": true,
+      "revealed_by": "e08"
+    },
+    {
+      "time": "Day 16",
+      "text": "A visiting conservator questions the varnish."
+    }
+  ],
+  "hints": [
+    "The frame was never taken. Ask what that means about where the swap happened.",
+    "Two things look suspicious and both have paperwork. Check the paperwork.",
+    "A copy that good was not made in four days."
+  ]
+}

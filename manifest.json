@@ -1,0 +1,43 @@
+{
+  "python": [
+    "detective_x/__init__.py",
+    "detective_x/__main__.py",
+    "detective_x/cli.py",
+    "detective_x/config.py",
+    "detective_x/engine/__init__.py",
+    "detective_x/engine/analyst.py",
+    "detective_x/engine/deduction.py",
+    "detective_x/engine/investigation.py",
+    "detective_x/engine/loader.py",
+    "detective_x/engine/scoring.py",
+    "detective_x/exceptions.py",
+    "detective_x/models/__init__.py",
+    "detective_x/models/case.py",
+    "detective_x/models/entities.py",
+    "detective_x/models/enums.py",
+    "detective_x/persistence/__init__.py",
+    "detective_x/persistence/save_manager.py",
+    "detective_x/ui/__init__.py",
+    "detective_x/ui/boxes.py",
+    "detective_x/ui/colours.py",
+    "detective_x/ui/terminal.py",
+    "detective_x/ui/web.py"
+  ],
+  "cases": [
+    "case_001.json",
+    "case_002.json",
+    "case_003.json",
+    "case_004.json",
+    "case_005.json",
+    "case_006.json",
+    "case_007.json",
+    "case_008.json",
+    "case_009.json",
+    "case_010.json",
+    "case_011.json",
+    "case_012.json",
+    "case_013.json",
+    "case_014.json",
+    "case_015.json"
+  ]
+}

@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "case_id": 7,
+  "title": "The Anonymous Letters",
+  "subtitle": "Six letters, one hand",
+  "difficulty": "Medium",
+  "culprit_id": "roland",
+  "setting": "Kerrigan Haulage",
+  "crime": "Criminal harassment",
+  "window": "Over nine weeks",
+  "briefing": "Fiona Kerrigan, who runs a haulage firm, has received six anonymous letters over nine weeks. They are typed, unsigned, and increasingly specific about her movements. The most recent describes the interior of her home office. The police want the sender identified before the threats escalate.",
+  "solution": "Roland Petrie, the firm's bookkeeper, wrote all six. He had been moving small sums out of the accounts for three years and began the letters when Fiona commissioned an external audit. The details of her home office came from a quotation visit he made for the firm's insurance renewal. His attempt to disguise his writing failed on a spelling habit and a printer that leaves a signature.",
+  "topics": {
+    "letters": "the anonymous letters",
+    "office_visit": "who has been in her home office",
+    "audit": "the external audit"
+  },
+  "suspects": [
+    {
+      "id": "roland",
+      "name": "Roland Petrie",
+      "age": 58,
+      "occupation": "Bookkeeper",
+      "relation": "Twenty years with the firm",
+      "motive": "Three years of small unexplained withdrawals, about to be audited.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Roland's desk printer",
+        "Roland's notebook"
+      ],
+      "statements": [
+        {
+          "topic": "letters",
+          "claim": "no_knowledge",
+          "question": "What do you know about the letters?",
+          "text": "Only what Fiona has told the office. It is a dreadful business.",
+          "is_lie": true
+        },
+        {
+          "topic": "office_visit",
+          "claim": "never",
+          "question": "Have you been in her home office?",
+          "text": "Never. I have not set foot in that house.",
+          "unlocked_by": "e07",
+          "is_lie": true
+        },
+        {
+          "topic": "audit",
+          "claim": "welcome",
+          "question": "How do you feel about the external audit?",
+          "text": "It is overdue, frankly. I have been asking for one for years.",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "declan",
+      "name": "Declan Fry",
+      "age": 34,
+      "occupation": "Yard supervisor",
+      "relation": "Manages the drivers",
+      "motive": "Was formally warned by Fiona a fortnight before the first letter.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Declan's van keys"
+      ],
+      "statements": [
+        {
+          "topic": "letters",
+          "claim": "no_knowledge",
+          "question": "What do you know about the letters?",
+          "text": "I heard about them in the canteen. That is all."
+        },
+        {
+          "topic": "office_visit",
+          "claim": "once",
+          "question": "Have you been in her home office?",
+          "text": "Once, last winter, to drop off keys. I stood in the doorway."
+        },
+        {
+          "topic": "audit",
+          "claim": "indifferent",
+          "question": "How do you feel about the external audit?",
+          "text": "It does not touch the yard. Good luck to them."
+        }
+      ]
+    },
+    {
+      "id": "mairead",
+      "name": "Mairead Kerrigan",
+      "age": 47,
+      "occupation": "Co-director",
+      "relation": "The victim's sister-in-law",
+      "motive": "Disagreed publicly with Fiona over selling the firm.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Mairead's laptop"
+      ],
+      "statements": [
+        {
+          "topic": "letters",
+          "claim": "seen_them",
+          "question": "What do you know about the letters?",
+          "text": "I have read three of them. They are written by somebody who knows the accounts."
+        },
+        {
+          "topic": "office_visit",
+          "claim": "often",
+          "question": "Have you been in her home office?",
+          "text": "Constantly. We do half our board business at her kitchen table."
+        },
+        {
+          "topic": "audit",
+          "claim": "supportive",
+          "question": "How do you feel about the external audit?",
+          "text": "I asked for it. Fiona resisted for months."
+        }
+      ]
+    },
+    {
+      "id": "bridget",
+      "name": "Bridget Nolan",
+      "age": 30,
+      "occupation": "Office administrator",
+      "relation": "Handles the post",
+      "motive": "Opens every letter that arrives, including these.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Bridget's cardigan"
+      ],
+      "statements": [
+        {
+          "topic": "letters",
+          "claim": "opened",
+          "question": "What do you know about the letters?",
+          "text": "I opened four of them. I wish I had not."
+        },
+        {
+          "topic": "office_visit",
+          "claim": "never",
+          "question": "Have you been in her home office?",
+          "text": "No. I have never been to the house."
+        },
+        {
+          "topic": "audit",
+          "claim": "indifferent",
+          "question": "How do you feel about the external audit?",
+          "text": "It means more filing for me. That is my entire opinion."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "letters",
+      "name": "The Letters",
+      "icon": "[L]",
+      "description": "Six sheets in evidence bags, laid out in order of receipt.",
+      "searchables": [
+        {
+          "id": "text",
+          "label": "Analyse the wording",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "The same word misspelled the same way, six times."
+        },
+        {
+          "id": "paper",
+          "label": "Examine the paper stock",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "A watermark used by one supplier in the county."
+        },
+        {
+          "id": "print",
+          "label": "Examine the print quality",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "A repeating defect down the right margin."
+        }
+      ]
+    },
+    {
+      "id": "postmark",
+      "name": "Postal Records",
+      "icon": "[P]",
+      "description": "Six postmarks, four sorting offices, one pattern.",
+      "searchables": [
+        {
+          "id": "marks",
+          "label": "Plot the postmarks",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "All six posted within a mile of one address."
+        },
+        {
+          "id": "times",
+          "label": "Check the collection times",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "Every one caught the 5:15 PM collection."
+        }
+      ]
+    },
+    {
+      "id": "officefirm",
+      "name": "The Firm's Office",
+      "icon": "[O]",
+      "description": "Four desks, four printers, and a stationery cupboard nobody locks.",
+      "searchables": [
+        {
+          "id": "printers",
+          "label": "Test the office printers",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "One machine reproduces the margin defect exactly."
+        },
+        {
+          "id": "stationery",
+          "label": "Check the stationery order",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "Who ordered the watermarked stock, and when."
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "name": "Fiona's Home Office",
+      "icon": "[H]",
+      "description": "The room described in the sixth letter, in detail that should not be available.",
+      "searchables": [
+        {
+          "id": "visitors",
+          "label": "Check the visitor book",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "An insurance quotation visit, five weeks ago."
+        },
+        {
+          "id": "details",
+          "label": "Compare the letter to the room",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "Three details visible only from one chair."
+        }
+      ]
+    },
+    {
+      "id": "accounts",
+      "name": "Accounts Ledger",
+      "icon": "[A]",
+      "description": "Three years of entries and a set of round numbers that recur.",
+      "searchables": [
+        {
+          "id": "ledger",
+          "label": "Examine the ledger",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "Small withdrawals, always under the review threshold."
+        },
+        {
+          "id": "auditfile",
+          "label": "Read the audit scope",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "The audit would have opened exactly those accounts."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Repeated misspelling",
+      "description": "The same uncommon misspelling appears in all six letters.",
+      "type": "DOCUMENT",
+      "reliability": 91,
+      "weight": 18,
+      "implicates": "roland"
+    },
+    {
+      "id": "e02",
+      "name": "Watermarked paper",
+      "description": "The paper carries a watermark from a single regional supplier.",
+      "type": "PHYSICAL",
+      "reliability": 88,
+      "weight": 12
+    },
+    {
+      "id": "e03",
+      "name": "Printer margin defect",
+      "description": "A repeating defect down the right margin of every letter.",
+      "type": "PHYSICAL",
+      "reliability": 94,
+      "weight": 20,
+      "implicates": "roland"
+    },
+    {
+      "id": "e04",
+      "name": "Postmark cluster",
+      "description": "All six letters were posted within a mile of the same address.",
+      "type": "DOCUMENT",
+      "reliability": 86,
+      "weight": 14,
+      "implicates": "declan",
+      "is_red_herring": true,
+      "cleared_by": "e06"
+    },
+    {
+      "id": "e05",
+      "name": "Collection time pattern",
+      "description": "Every letter caught the 5:15 PM collection, just after office hours.",
+      "type": "DOCUMENT",
+      "reliability": 90,
+      "weight": 10
+    },
+    {
+      "id": "e06",
+      "name": "Printer match",
+      "description": "The margin defect is reproduced exactly by the bookkeeper's desk printer.",
+      "type": "PHYSICAL",
+      "reliability": 97,
+      "weight": 30,
+      "implicates": "roland",
+      "matches": [
+        "Roland's desk printer"
+      ]
+    },
+    {
+      "id": "e07",
+      "name": "Insurance visit record",
+      "description": "Roland attended a quotation visit to the house five weeks ago.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 26,
+      "implicates": "roland"
+    },
+    {
+      "id": "e08",
+      "name": "Stationery order",
+      "description": "The watermarked stock was ordered by the accounts desk in March.",
+      "type": "DOCUMENT",
+      "reliability": 89,
+      "weight": 20,
+      "implicates": "roland"
+    },
+    {
+      "id": "e09",
+      "name": "Sightline detail",
+      "description": "The sixth letter describes three details visible only from the chair by the window.",
+      "type": "TESTIMONY",
+      "reliability": 80,
+      "weight": 16,
+      "implicates": "roland"
+    },
+    {
+      "id": "e10",
+      "name": "Irregular withdrawals",
+      "description": "Three years of small withdrawals, each just under the review threshold.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 22,
+      "implicates": "roland"
+    },
+    {
+      "id": "e11",
+      "name": "Audit scope document",
+      "description": "The commissioned audit would have opened the exact accounts affected.",
+      "type": "DOCUMENT",
+      "reliability": 93,
+      "weight": 0
+    },
+    {
+      "id": "e12",
+      "name": "Handwriting on the notebook",
+      "description": "The bookkeeper's notebook carries the same misspelling, unguarded.",
+      "type": "DOCUMENT",
+      "reliability": 98,
+      "weight": 32,
+      "implicates": "roland",
+      "requires": [
+        "e01",
+        "e10"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "Week 1",
+      "text": "Fiona commissions an external audit."
+    },
+    {
+      "time": "Week 2",
+      "text": "The first letter arrives."
+    },
+    {
+      "time": "Week 4",
+      "text": "The letters begin describing her movements."
+    },
+    {
+      "time": "Week 5",
+      "text": "An insurance quotation visit takes place at the house.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "Week 7",
+      "text": "The sixth letter describes the interior of the home office.",
+      "hidden": true,
+      "revealed_by": "e09"
+    },
+    {
+      "time": "Week 9",
+      "text": "The audit fieldwork is scheduled to begin."
+    }
+  ],
+  "hints": [
+    "The writer tried to disguise their style but not their spelling.",
+    "Printers leave a signature. Find the machine, not the person.",
+    "Ask who had a reason to want the audit stopped."
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "case_id": 3,
+  "title": "The Poisoned Professor",
+  "subtitle": "A departmental meeting, and one cup that mattered",
+  "difficulty": "Expert",
+  "culprit_id": "vikram",
+  "setting": "Halloway University, Department of Chemistry",
+  "crime": "Poisoning",
+  "window": "2:40 PM - 3:20 PM",
+  "briefing": "Professor Alan Reeve collapses forty minutes after a departmental meeting and is taken to hospital in a critical condition. Toxicology finds a cardiac drug in his system at several times the therapeutic dose. He does not take that drug. Six people were in the room, the coffee was poured from a shared pot, and the cups were laid out in advance with names on them.",
+  "solution": "Vikram Rao had access to the departmental drug cabinet as the departmental safety officer, and had learned that Reeve intended to name him in a research misconduct report the following week. He dosed the cup laid out at Reeve's place before the meeting began. The medication bottle found in Reeve's office was his own prescription and had nothing to do with it.",
+  "topics": {
+    "before_meeting": "where they were before the meeting",
+    "cups": "who laid out the cups",
+    "cabinet": "access to the drug cabinet",
+    "report": "the misconduct report"
+  },
+  "suspects": [
+    {
+      "id": "vikram",
+      "name": "Dr Vikram Rao",
+      "age": 44,
+      "occupation": "Senior lecturer",
+      "relation": "Departmental safety officer",
+      "motive": "Was about to be named in a research misconduct report.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Vikram's lab coat",
+        "Vikram's briefcase"
+      ],
+      "statements": [
+        {
+          "topic": "before_meeting",
+          "claim": "office",
+          "question": "Where were you before the meeting?",
+          "text": "In my office, marking. I came in at two thirty-five with everyone else.",
+          "is_lie": true
+        },
+        {
+          "topic": "cups",
+          "claim": "admin",
+          "question": "Who laid the cups out?",
+          "text": "The department secretary, as always. It is not a task any of us would want."
+        },
+        {
+          "topic": "cabinet",
+          "claim": "shared",
+          "question": "Who has access to the drug cabinet?",
+          "text": "It is a shared key. Half the department could sign it out.",
+          "is_lie": true
+        },
+        {
+          "topic": "report",
+          "claim": "unaware",
+          "question": "Were you aware of a misconduct report?",
+          "text": "This is the first I have heard of any report.",
+          "unlocked_by": "e09",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "helen",
+      "name": "Dr Helen Vance",
+      "age": 51,
+      "occupation": "Reader",
+      "relation": "Chaired the meeting",
+      "motive": "Competing with Reeve for the same research funding.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Helen's satchel"
+      ],
+      "statements": [
+        {
+          "topic": "before_meeting",
+          "claim": "seminar_room",
+          "question": "Where were you before the meeting?",
+          "text": "Setting up the room from about two twenty. I was in and out."
+        },
+        {
+          "topic": "cups",
+          "claim": "admin",
+          "question": "Who laid the cups out?",
+          "text": "Priya did, before I got there. They were already on the side table."
+        },
+        {
+          "topic": "cabinet",
+          "claim": "no",
+          "question": "Do you have drug cabinet access?",
+          "text": "No. I have not signed that key out in four years."
+        },
+        {
+          "topic": "report",
+          "claim": "aware",
+          "question": "Were you aware of a misconduct report?",
+          "text": "Alan mentioned he was preparing something. He did not say against whom."
+        }
+      ]
+    },
+    {
+      "id": "priya",
+      "name": "Priya Raman",
+      "age": 26,
+      "occupation": "Departmental administrator",
+      "relation": "Laid out the room",
+      "motive": "Was passed over for a permanent contract that Reeve blocked.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Priya's cardigan"
+      ],
+      "statements": [
+        {
+          "topic": "before_meeting",
+          "claim": "seminar_room",
+          "question": "Where were you before the meeting?",
+          "text": "In the seminar room from two fifteen, laying out the cups and the agenda."
+        },
+        {
+          "topic": "cups",
+          "claim": "me",
+          "question": "Who laid the cups out?",
+          "text": "I did. Names on the saucers, the way Professor Reeve insists."
+        },
+        {
+          "topic": "cabinet",
+          "claim": "no",
+          "question": "Do you have drug cabinet access?",
+          "text": "Absolutely not. I would not know where it is kept."
+        },
+        {
+          "topic": "report",
+          "claim": "unaware",
+          "question": "Were you aware of a misconduct report?",
+          "text": "No, and I would have typed it if there were one."
+        }
+      ]
+    },
+    {
+      "id": "callum",
+      "name": "Dr Callum Bright",
+      "age": 39,
+      "occupation": "Lecturer",
+      "relation": "Sat beside Reeve",
+      "motive": "Reeve rejected his promotion case twice.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Callum's jacket"
+      ],
+      "statements": [
+        {
+          "topic": "before_meeting",
+          "claim": "corridor",
+          "question": "Where were you before the meeting?",
+          "text": "In the corridor on the phone until about two thirty-eight."
+        },
+        {
+          "topic": "cups",
+          "claim": "admin",
+          "question": "Who laid the cups out?",
+          "text": "Priya. She always does."
+        },
+        {
+          "topic": "cabinet",
+          "claim": "yes",
+          "question": "Do you have drug cabinet access?",
+          "text": "I have signed the key out, yes. For a third year practical, in October."
+        },
+        {
+          "topic": "report",
+          "claim": "aware",
+          "question": "Were you aware of a misconduct report?",
+          "text": "Everyone knew he was writing one. Nobody knew who it named."
+        }
+      ]
+    },
+    {
+      "id": "nadia",
+      "name": "Dr Nadia Okafor",
+      "age": 33,
+      "occupation": "Postdoctoral researcher",
+      "relation": "Took the minutes",
+      "motive": "Her contract depended on Reeve's grant renewal.",
+      "base_suspicion": 15,
+      "belongings": [
+        "Nadia's notebook"
+      ],
+      "statements": [
+        {
+          "topic": "before_meeting",
+          "claim": "lab",
+          "question": "Where were you before the meeting?",
+          "text": "In the lab until two thirty-six. The instrument log will show it."
+        },
+        {
+          "topic": "cups",
+          "claim": "admin",
+          "question": "Who laid the cups out?",
+          "text": "Priya. I saw her carrying the tray in."
+        },
+        {
+          "topic": "cabinet",
+          "claim": "no",
+          "question": "Do you have drug cabinet access?",
+          "text": "No. Postdocs are not on that list."
+        },
+        {
+          "topic": "report",
+          "claim": "aware",
+          "question": "Were you aware of a misconduct report?",
+          "text": "Alan asked me to check a dataset for him last month. He was very careful about who saw it."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "seminar",
+      "name": "Seminar Room",
+      "icon": "[R]",
+      "description": "Twelve chairs, a side table with six cups, and a window that does not open.",
+      "searchables": [
+        {
+          "id": "cup",
+          "label": "Examine Professor Reeve's cup",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "A faint residue at the base, below the coffee line."
+        },
+        {
+          "id": "pot",
+          "label": "Test the coffee pot",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Clean. Whatever it was, it was not in the pot."
+        },
+        {
+          "id": "saucers",
+          "label": "Check the named saucers",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "Handwritten cards, one per place."
+        }
+      ]
+    },
+    {
+      "id": "office",
+      "name": "Reeve's Office",
+      "icon": "[O]",
+      "description": "Books to the ceiling and a desk that has not been tidied in a decade.",
+      "searchables": [
+        {
+          "id": "bottle",
+          "label": "Examine the medication bottle",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "A prescription in his own name."
+        },
+        {
+          "id": "desk",
+          "label": "Search the desk",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A draft document, printed, unsigned."
+        },
+        {
+          "id": "bin",
+          "label": "Go through the waste bin",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "A torn envelope with a departmental frank."
+        }
+      ]
+    },
+    {
+      "id": "cabinet",
+      "name": "Drug Cabinet Store",
+      "icon": "[K]",
+      "description": "A locked steel cabinet, a signing-out book, and a key nobody guards properly.",
+      "searchables": [
+        {
+          "id": "register",
+          "label": "Read the signing-out register",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "One entry the week before, in a hurried hand."
+        },
+        {
+          "id": "stock",
+          "label": "Count the stock",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "The count is short by more than the register admits."
+        }
+      ]
+    },
+    {
+      "id": "lab",
+      "name": "Teaching Laboratory",
+      "icon": "[L]",
+      "description": "Benches, an instrument log, and a swipe reader on the door.",
+      "searchables": [
+        {
+          "id": "swipes",
+          "label": "Pull the door swipe records",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "Everyone's movements, to the minute."
+        },
+        {
+          "id": "gloves",
+          "label": "Check the glove bin",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "A pair of gloves pushed to the bottom, inside out."
+        }
+      ]
+    },
+    {
+      "id": "cafeteria",
+      "name": "Cafeteria",
+      "icon": "[C]",
+      "description": "Where four of the six were seen at various points that afternoon.",
+      "searchables": [
+        {
+          "id": "till",
+          "label": "Check the till receipts",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "Times, to the second, and no ambiguity."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Residue in the cup",
+      "description": "A cardiac drug residue at the base of the cup laid at Reeve's place.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 10
+    },
+    {
+      "id": "e02",
+      "name": "Clean coffee pot",
+      "description": "The shared pot tests clear. The dose went into one cup only.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 8
+    },
+    {
+      "id": "e03",
+      "name": "Named place cards",
+      "description": "Cups were laid at named places, so the target was chosen in advance.",
+      "type": "PHYSICAL",
+      "reliability": 95,
+      "weight": 6
+    },
+    {
+      "id": "e04",
+      "name": "Medication bottle",
+      "description": "A bottle of Reeve's own prescription, unrelated to the drug found.",
+      "type": "DOCUMENT",
+      "reliability": 90,
+      "weight": 15,
+      "implicates": "helen",
+      "is_red_herring": true,
+      "cleared_by": "e01"
+    },
+    {
+      "id": "e05",
+      "name": "Cabinet register entry",
+      "description": "The cabinet key was signed out the previous week by V. Rao.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 25,
+      "implicates": "vikram"
+    },
+    {
+      "id": "e06",
+      "name": "Short stock count",
+      "description": "The cabinet holds less of the drug than the register accounts for.",
+      "type": "PHYSICAL",
+      "reliability": 92,
+      "weight": 20,
+      "implicates": "vikram"
+    },
+    {
+      "id": "e07",
+      "name": "Door swipe records",
+      "description": "Vikram entered the seminar room at 2:21 PM, fourteen minutes before he claims.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 30,
+      "implicates": "vikram"
+    },
+    {
+      "id": "e08",
+      "name": "Discarded gloves",
+      "description": "A pair of gloves in the lab bin, inside out, with cabinet dust on them.",
+      "type": "PHYSICAL",
+      "reliability": 78,
+      "weight": 18,
+      "implicates": "vikram"
+    },
+    {
+      "id": "e09",
+      "name": "Draft misconduct report",
+      "description": "An unsigned draft naming a senior member of the department.",
+      "type": "DOCUMENT",
+      "reliability": 88,
+      "weight": 12
+    },
+    {
+      "id": "e10",
+      "name": "Torn internal envelope",
+      "description": "A departmental envelope addressed to Dr V. Rao, opened and discarded.",
+      "type": "DOCUMENT",
+      "reliability": 85,
+      "weight": 22,
+      "implicates": "vikram"
+    },
+    {
+      "id": "e11",
+      "name": "Cafeteria receipt",
+      "description": "Priya was at the till at 2:19 PM, before the room was laid out.",
+      "type": "DOCUMENT",
+      "reliability": 94,
+      "weight": 10,
+      "implicates": "priya",
+      "is_red_herring": true,
+      "cleared_by": "e07"
+    },
+    {
+      "id": "e12",
+      "name": "Named page of the report",
+      "description": "The draft's second page names Vikram Rao directly.",
+      "type": "DOCUMENT",
+      "reliability": 97,
+      "weight": 35,
+      "implicates": "vikram",
+      "requires": [
+        "e09",
+        "e10"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "02:15 PM",
+      "text": "Priya begins laying out the seminar room."
+    },
+    {
+      "time": "02:19 PM",
+      "text": "Priya is recorded at the cafeteria till.",
+      "hidden": true,
+      "revealed_by": "e11"
+    },
+    {
+      "time": "02:21 PM",
+      "text": "A swipe records entry to the seminar room.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "02:35 PM",
+      "text": "Attendees arrive for the meeting."
+    },
+    {
+      "time": "02:40 PM",
+      "text": "The meeting begins. Coffee is poured."
+    },
+    {
+      "time": "03:05 PM",
+      "text": "The meeting ends."
+    },
+    {
+      "time": "03:20 PM",
+      "text": "Professor Reeve collapses in the corridor."
+    },
+    {
+      "time": "03:26 PM",
+      "text": "An ambulance is called."
+    }
+  ],
+  "hints": [
+    "The pot is clean. Ask what that tells you about when the dose was added.",
+    "One person's account of their own arrival time can be checked against a door reader.",
+    "Find out who the report was going to name."
+  ]
+}

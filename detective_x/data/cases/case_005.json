@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "case_id": 5,
+  "title": "The Vanishing Programmer",
+  "subtitle": "Missing, one day before release",
+  "difficulty": "Hard",
+  "culprit_id": "leon",
+  "setting": "Arclight Systems",
+  "crime": "Disappearance",
+  "window": "6:40 PM - 11:00 PM",
+  "briefing": "Sana Iqbal, lead engineer on a confidential machine learning product, does not arrive for the release rehearsal. Her car is in the company car park, her pass is in her desk drawer, and her phone last connected to the office network at 6:40 PM the previous evening. Her manager reports her missing. The board wants it treated as industrial espionage.",
+  "solution": "Sana was not taken. She left deliberately, after discovering that Leon Marsh had been falsifying the model's evaluation figures for eighteen months. She copied the evidence, drove a hire car to her sister's, and left her own car and pass behind so that nobody would look for a vehicle. Leon reported her missing loudly and early, hoping the espionage story would land before she surfaced.",
+  "topics": {
+    "last_seen": "when they last saw Sana",
+    "repository": "the repository activity",
+    "evaluation": "the evaluation figures"
+  },
+  "suspects": [
+    {
+      "id": "leon",
+      "name": "Leon Marsh",
+      "age": 47,
+      "occupation": "Head of research",
+      "relation": "Sana's manager",
+      "motive": "Sana had found eighteen months of falsified evaluation results.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Leon's office key",
+        "Leon's laptop"
+      ],
+      "statements": [
+        {
+          "topic": "last_seen",
+          "claim": "six_thirty",
+          "question": "When did you last see Sana?",
+          "text": "About half past six. She said she was going to finish the eval report."
+        },
+        {
+          "topic": "repository",
+          "claim": "normal",
+          "question": "Was there unusual repository activity?",
+          "text": "Nothing beyond the usual pre-release churn.",
+          "is_lie": true
+        },
+        {
+          "topic": "evaluation",
+          "claim": "clean",
+          "question": "Are the evaluation figures sound?",
+          "text": "They have been reviewed three times. They are sound.",
+          "unlocked_by": "e06",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "name": "Dev Anand",
+      "age": 31,
+      "occupation": "Platform engineer",
+      "relation": "Sat opposite Sana",
+      "motive": "Was passed over for the lead role that went to Sana.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Dev's rucksack"
+      ],
+      "statements": [
+        {
+          "topic": "last_seen",
+          "claim": "six_forty",
+          "question": "When did you last see Sana?",
+          "text": "Twenty to seven. She was printing something and she looked ill."
+        },
+        {
+          "topic": "repository",
+          "claim": "unusual",
+          "question": "Was there unusual repository activity?",
+          "text": "She pulled the whole eval history at half six. That is not normal."
+        },
+        {
+          "topic": "evaluation",
+          "claim": "suspect",
+          "question": "Are the evaluation figures sound?",
+          "text": "I have never been allowed to see the raw runs. Make of that what you like."
+        }
+      ]
+    },
+    {
+      "id": "marta",
+      "name": "Marta Kovac",
+      "age": 38,
+      "occupation": "Security lead",
+      "relation": "Runs the building access system",
+      "motive": "Deleted a block of camera footage the same evening.",
+      "base_suspicion": 45,
+      "belongings": [
+        "Marta's tablet"
+      ],
+      "statements": [
+        {
+          "topic": "last_seen",
+          "claim": "not_seen",
+          "question": "When did you last see Sana?",
+          "text": "I did not see her that day at all."
+        },
+        {
+          "topic": "repository",
+          "claim": "not_my_area",
+          "question": "Was there unusual repository activity?",
+          "text": "Not my system. I watch doors, not branches."
+        },
+        {
+          "topic": "footage",
+          "claim": "retention",
+          "question": "Why was the car park footage deleted?",
+          "text": "Thirty day retention, automatically. It ran the night she vanished. Bad luck.",
+          "unlocked_by": "e04"
+        }
+      ]
+    },
+    {
+      "id": "bea",
+      "name": "Bea Nolan",
+      "age": 29,
+      "occupation": "Product manager",
+      "relation": "Coordinating the release",
+      "motive": "Her bonus depended on shipping on time.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Bea's planner"
+      ],
+      "statements": [
+        {
+          "topic": "last_seen",
+          "claim": "six_fifteen",
+          "question": "When did you last see Sana?",
+          "text": "Quarter past six, in the kitchen. She asked me what happens if a release is pulled."
+        },
+        {
+          "topic": "repository",
+          "claim": "unusual",
+          "question": "Was there unusual repository activity?",
+          "text": "I do not read commits. But she asked me about pulling the release, which was new."
+        },
+        {
+          "topic": "evaluation",
+          "claim": "suspect",
+          "question": "Are the evaluation figures sound?",
+          "text": "Sana raised a concern in writing last month. It was marked as resolved by Leon."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "desk",
+      "name": "Sana's Desk",
+      "icon": "[D]",
+      "description": "Two monitors, a cold cup of tea, and a pass sitting squarely in an open drawer.",
+      "searchables": [
+        {
+          "id": "drawer",
+          "label": "Search the drawer",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "The pass, placed deliberately, not dropped."
+        },
+        {
+          "id": "machine",
+          "label": "Examine her workstation",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "A shell history that reads like a plan."
+        },
+        {
+          "id": "printer",
+          "label": "Check the printer queue",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "One job, 62 pages, collected."
+        }
+      ]
+    },
+    {
+      "id": "carpark",
+      "name": "Car Park",
+      "icon": "[P]",
+      "description": "Her car in bay 41, cold, locked, and covered in a night's dust.",
+      "searchables": [
+        {
+          "id": "car",
+          "label": "Examine her car",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "Nothing disturbed. It has not been driven."
+        },
+        {
+          "id": "cctv",
+          "label": "Request the car park footage",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "The relevant night is gone."
+        }
+      ]
+    },
+    {
+      "id": "repo",
+      "name": "Repository Server",
+      "icon": "[R]",
+      "description": "Where the eighteen months of history live.",
+      "searchables": [
+        {
+          "id": "history",
+          "label": "Trace the repository access",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "She pulled everything, then stopped."
+        },
+        {
+          "id": "blame",
+          "label": "Examine the evaluation commits",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "One account rewrote the same numbers eleven times."
+        }
+      ]
+    },
+    {
+      "id": "mail",
+      "name": "Mail Archive",
+      "icon": "[M]",
+      "description": "The retained copy of everything anyone sent.",
+      "searchables": [
+        {
+          "id": "thread",
+          "label": "Search Sana's outbound mail",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "A concern raised, and an answer that closes it."
+        },
+        {
+          "id": "leonmail",
+          "label": "Search Leon's outbound mail",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A note sent at 7:02 PM that should not exist yet."
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "name": "Site Gate",
+      "icon": "[G]",
+      "description": "One barrier, one camera, and a log of every plate that passes.",
+      "searchables": [
+        {
+          "id": "plates",
+          "label": "Read the plate register",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "A hire car in at 6:20 PM and out at 6:58 PM."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Abandoned pass",
+      "description": "Her access pass was placed in her drawer, not lost.",
+      "type": "PHYSICAL",
+      "reliability": 96,
+      "weight": 6
+    },
+    {
+      "id": "e02",
+      "name": "Shell history",
+      "description": "A sequence of commands ending in a full export of the evaluation history.",
+      "type": "DIGITAL",
+      "reliability": 98,
+      "weight": 10
+    },
+    {
+      "id": "e03",
+      "name": "Print job record",
+      "description": "A 62 page document printed at 6:34 PM and collected.",
+      "type": "DIGITAL",
+      "reliability": 94,
+      "weight": 8
+    },
+    {
+      "id": "e04",
+      "name": "Deleted car park footage",
+      "description": "The car park recording for that night has been removed.",
+      "type": "DIGITAL",
+      "reliability": 90,
+      "weight": 20,
+      "implicates": "marta",
+      "is_red_herring": true,
+      "cleared_by": "e10"
+    },
+    {
+      "id": "e05",
+      "name": "Undisturbed car",
+      "description": "Her car has not been driven and shows no sign of a struggle.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 5
+    },
+    {
+      "id": "e06",
+      "name": "Repository export",
+      "description": "Sana pulled the complete evaluation history at 6:31 PM.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 12
+    },
+    {
+      "id": "e07",
+      "name": "Rewritten evaluation commits",
+      "description": "One account amended the same evaluation figures eleven times.",
+      "type": "DIGITAL",
+      "reliability": 97,
+      "weight": 30,
+      "implicates": "leon"
+    },
+    {
+      "id": "e08",
+      "name": "Sana's raised concern",
+      "description": "A written concern about the figures, marked resolved without a reply.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 22,
+      "implicates": "leon"
+    },
+    {
+      "id": "e09",
+      "name": "Premature missing person note",
+      "description": "Leon reported Sana missing at 7:02 PM, before anyone had missed her.",
+      "type": "DOCUMENT",
+      "reliability": 92,
+      "weight": 28,
+      "implicates": "leon"
+    },
+    {
+      "id": "e10",
+      "name": "Hire car plate record",
+      "description": "A hire car entered at 6:20 PM and left at 6:58 PM with one occupant.",
+      "type": "DOCUMENT",
+      "reliability": 88,
+      "weight": 10
+    },
+    {
+      "id": "e11",
+      "name": "Hire agreement",
+      "description": "The hire car was booked in Sana's name, three days in advance.",
+      "type": "DOCUMENT",
+      "reliability": 94,
+      "weight": 0,
+      "requires": [
+        "e10",
+        "e01"
+      ]
+    },
+    {
+      "id": "e12",
+      "name": "Amended commit authorship",
+      "description": "The rewritten commits were authored under Leon's signing key.",
+      "type": "DIGITAL",
+      "reliability": 99,
+      "weight": 35,
+      "implicates": "leon",
+      "requires": [
+        "e07",
+        "e09"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "06:15 PM",
+      "text": "Sana speaks to Bea in the kitchen."
+    },
+    {
+      "time": "06:20 PM",
+      "text": "A hire car enters the site.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "06:31 PM",
+      "text": "The full evaluation history is exported.",
+      "hidden": true,
+      "revealed_by": "e06"
+    },
+    {
+      "time": "06:34 PM",
+      "text": "A 62 page document is printed.",
+      "hidden": true,
+      "revealed_by": "e03"
+    },
+    {
+      "time": "06:40 PM",
+      "text": "Sana's phone leaves the office network."
+    },
+    {
+      "time": "06:58 PM",
+      "text": "The hire car leaves the site.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "07:02 PM",
+      "text": "Leon files a missing person note.",
+      "hidden": true,
+      "revealed_by": "e09"
+    },
+    {
+      "time": "11:00 PM",
+      "text": "Sana's phone is switched off for the last time."
+    }
+  ],
+  "hints": [
+    "Ask why someone taken against their will would put their pass away neatly.",
+    "Somebody reported her missing before anybody knew she was gone.",
+    "The evaluation history was rewritten. Find whose key signed it."
+  ]
+}

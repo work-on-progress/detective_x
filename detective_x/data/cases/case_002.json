@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "case_id": 2,
+  "title": "The Midnight Server Breach",
+  "subtitle": "Valid credentials, an invalid person",
+  "difficulty": "Hard",
+  "culprit_id": "ethan",
+  "setting": "NexaCore Technologies",
+  "crime": "Data theft",
+  "window": "11:29 PM - 11:48 PM",
+  "briefing": "NexaCore is a fortnight from a confidential product release. At 11:42 PM an internal monitor records a protected source archive being copied off a restricted development server. Nobody broke in. Valid employee credentials were used, a badge belonging to someone at home opened a side door, and a camera stopped recording for nineteen minutes.",
+  "solution": "Ethan Blake's contractor account should have been revoked when his engagement ended. It was not. He borrowed Olivia's badge from the coat rack during his exit interview, entered through the side door, worked from Maya's unlocked workstation, and used Ryan's administrator credentials which he had watched being typed weeks earlier. The camera outage was Daniel's routine firmware push, and it simply happened to overlap.",
+  "topics": {
+    "whereabouts": "their whereabouts that night",
+    "credentials": "who could use the admin account",
+    "badge": "the badge used at the side door"
+  },
+  "suspects": [
+    {
+      "id": "ryan",
+      "name": "Ryan Cole",
+      "age": 38,
+      "occupation": "System administrator",
+      "relation": "Owns the credentials that were used",
+      "motive": "Full access to every system that was touched.",
+      "base_suspicion": 60,
+      "belongings": [
+        "Ryan's laptop"
+      ],
+      "statements": [
+        {
+          "topic": "whereabouts",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home. My badge never touched the building after six, and you can check that."
+        },
+        {
+          "topic": "credentials",
+          "claim": "stolen",
+          "question": "Your account did this. Explain that.",
+          "text": "Then somebody has my password. I have been saying so since the alert came in."
+        },
+        {
+          "topic": "badge",
+          "claim": "unknown",
+          "question": "Whose badge opened the side door?",
+          "text": "Not mine. Mine is in the log at 5:52 PM, going out."
+        }
+      ]
+    },
+    {
+      "id": "maya",
+      "name": "Maya Chen",
+      "age": 29,
+      "occupation": "Software engineer",
+      "relation": "Her workstation was used",
+      "motive": "Direct access to the development repositories.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Maya's access card",
+        "Maya's desk drawer"
+      ],
+      "statements": [
+        {
+          "topic": "whereabouts",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "I left at quarter past eight. My partner will tell you when I got in."
+        },
+        {
+          "topic": "credentials",
+          "claim": "not_mine",
+          "question": "Your machine issued the commands.",
+          "text": "My machine was on. I do not lock it. That is a bad habit, not a crime."
+        },
+        {
+          "topic": "badge",
+          "claim": "unknown",
+          "question": "Whose badge opened the side door?",
+          "text": "I have no idea. Mine is on my keyring and my keyring was with me."
+        }
+      ]
+    },
+    {
+      "id": "daniel",
+      "name": "Daniel Ross",
+      "age": 45,
+      "occupation": "Security officer",
+      "relation": "On duty during the outage",
+      "motive": "Controls the building's cameras and door system.",
+      "base_suspicion": 50,
+      "belongings": [
+        "Daniel's radio"
+      ],
+      "statements": [
+        {
+          "topic": "whereabouts",
+          "claim": "patrol",
+          "question": "Where were you that night?",
+          "text": "On the external patrol, as logged, every twenty minutes."
+        },
+        {
+          "topic": "credentials",
+          "claim": "no_access",
+          "question": "Could you have used the admin account?",
+          "text": "I can open doors. I cannot open a repository. Ask anyone."
+        },
+        {
+          "topic": "badge",
+          "claim": "olivia",
+          "question": "Whose badge opened the side door?",
+          "text": "The system says Olivia Grant. I flagged it at the time and nobody called me back."
+        }
+      ]
+    },
+    {
+      "id": "olivia",
+      "name": "Olivia Grant",
+      "age": 34,
+      "occupation": "Product manager",
+      "relation": "Her badge was used at 11:31 PM",
+      "motive": "Holds the confidential project documents that were taken.",
+      "base_suspicion": 20,
+      "belongings": [
+        "Olivia's badge",
+        "Olivia's coat"
+      ],
+      "statements": [
+        {
+          "topic": "whereabouts",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home from seven. My badge was in my coat pocket in the third floor cloakroom."
+        },
+        {
+          "topic": "badge",
+          "claim": "mine_but_not_me",
+          "question": "Your badge opened the side door.",
+          "text": "Then somebody took it out of my coat. I noticed it missing the next morning."
+        },
+        {
+          "topic": "credentials",
+          "claim": "no_access",
+          "question": "Could you have used the admin account?",
+          "text": "I cannot deploy a change without three approvals. I certainly cannot do this."
+        }
+      ]
+    },
+    {
+      "id": "ethan",
+      "name": "Ethan Blake",
+      "age": 27,
+      "occupation": "Contract developer",
+      "relation": "Engagement ended two days earlier",
+      "motive": "His access was never revoked and his contract was terminated early.",
+      "base_suspicion": 70,
+      "belongings": [
+        "Ethan's rucksack",
+        "Ethan's USB device"
+      ],
+      "statements": [
+        {
+          "topic": "whereabouts",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home. I do not even have a badge any more, so what would I be doing there?",
+          "is_lie": true
+        },
+        {
+          "topic": "credentials",
+          "claim": "no_access",
+          "question": "Could you have used the admin account?",
+          "text": "My account was disabled on Friday. Whatever this is, it is not me.",
+          "is_lie": true
+        },
+        {
+          "topic": "badge",
+          "claim": "unknown",
+          "question": "Whose badge opened the side door?",
+          "text": "How would I know? I was let go. I am not on your systems."
+        },
+        {
+          "topic": "usb",
+          "claim": "denied",
+          "question": "A USB device registered to you was connected.",
+          "text": "I returned all my equipment. If something has my name on it, someone else kept it.",
+          "unlocked_by": "e08"
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "workstation",
+      "name": "Development Workstation",
+      "icon": "[W]",
+      "description": "Maya's desk. The screen is still awake and the chair has been moved.",
+      "searchables": [
+        {
+          "id": "session",
+          "label": "Review the session history",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "Commands typed by someone who did not know the layout."
+        },
+        {
+          "id": "ports",
+          "label": "Check the physical ports",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "A USB port with fresh scratches around it."
+        }
+      ]
+    },
+    {
+      "id": "server",
+      "name": "Server Room",
+      "icon": "[V]",
+      "description": "Cold, loud, and very well documented.",
+      "searchables": [
+        {
+          "id": "archive",
+          "label": "Trace the archive access",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "The copy took four minutes and thirty seconds."
+        },
+        {
+          "id": "deleted",
+          "label": "Recover deleted temporary files",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "Someone tidied up, but not thoroughly."
+        }
+      ]
+    },
+    {
+      "id": "securityroom",
+      "name": "Security Control Room",
+      "icon": "[S]",
+      "description": "A wall of feeds, one of which is a grey rectangle for nineteen minutes.",
+      "searchables": [
+        {
+          "id": "camera",
+          "label": "Pull the camera outage record",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "11:29 to 11:48. Neat."
+        },
+        {
+          "id": "push",
+          "label": "Check the maintenance schedule",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "A firmware push, scheduled a fortnight ago."
+        }
+      ]
+    },
+    {
+      "id": "entrance",
+      "name": "Building Entrance",
+      "icon": "[E]",
+      "description": "Two doors: the main lobby, and the side door nobody uses after eight.",
+      "searchables": [
+        {
+          "id": "badge",
+          "label": "Check the badge reader log",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "One entry at 11:31 PM."
+        },
+        {
+          "id": "cloakroom",
+          "label": "Search the third floor cloakroom",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A coat, a pocket, and no badge in it."
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "Backup Storage Area",
+      "icon": "[B]",
+      "description": "Shelves of drives, and a signing-out book nobody has enforced in years.",
+      "searchables": [
+        {
+          "id": "register",
+          "label": "Read the equipment register",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "Serial NX-8831 was never signed back in."
+        },
+        {
+          "id": "accounts",
+          "label": "Audit the account status list",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "One contractor account, still partly alive."
+        }
+      ]
+    },
+    {
+      "id": "logterminal",
+      "name": "Access Log Terminal",
+      "icon": "[L]",
+      "description": "The read-only terminal where the building's records can be cross-checked.",
+      "searchables": [
+        {
+          "id": "crossref",
+          "label": "Cross-reference badge and login times",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "Two records that cannot both be innocent."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Session history",
+      "description": "Commands run from Maya's workstation at 11:36 PM by someone unfamiliar with the layout.",
+      "type": "DIGITAL",
+      "reliability": 95,
+      "weight": 15,
+      "implicates": "maya",
+      "is_red_herring": true,
+      "cleared_by": "e11"
+    },
+    {
+      "id": "e02",
+      "name": "Archive access record",
+      "description": "The protected archive was read at 11:42 PM under Ryan's administrator account.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 15,
+      "implicates": "ryan",
+      "is_red_herring": true,
+      "cleared_by": "e11"
+    },
+    {
+      "id": "e03",
+      "name": "Side door badge entry",
+      "description": "Olivia Grant's badge opened the side door at 11:31 PM.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 12,
+      "implicates": "olivia",
+      "is_red_herring": true,
+      "cleared_by": "e09"
+    },
+    {
+      "id": "e04",
+      "name": "USB connection record",
+      "description": "A USB mass storage device was connected at 11:44 PM.",
+      "type": "DIGITAL",
+      "reliability": 98,
+      "weight": 18,
+      "implicates": "ethan"
+    },
+    {
+      "id": "e05",
+      "name": "Camera outage window",
+      "description": "The server corridor camera recorded nothing between 11:29 and 11:48 PM.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 14,
+      "implicates": "daniel",
+      "is_red_herring": true,
+      "cleared_by": "e06"
+    },
+    {
+      "id": "e06",
+      "name": "Firmware push schedule",
+      "description": "The outage matches a firmware push scheduled two weeks in advance.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 0
+    },
+    {
+      "id": "e07",
+      "name": "Deleted temporary archive",
+      "description": "A partially overwritten copy of the archive in the server's temp space.",
+      "type": "DIGITAL",
+      "reliability": 90,
+      "weight": 10
+    },
+    {
+      "id": "e08",
+      "name": "Equipment register entry",
+      "description": "USB device NX-8831 is signed out to Ethan Blake and never returned.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 30,
+      "implicates": "ethan"
+    },
+    {
+      "id": "e09",
+      "name": "Empty coat pocket",
+      "description": "Olivia's coat is in the cloakroom. The badge pocket is empty and the lining is pulled.",
+      "type": "PHYSICAL",
+      "reliability": 82,
+      "weight": 0
+    },
+    {
+      "id": "e10",
+      "name": "Live contractor account",
+      "description": "Ethan Blake's account was flagged for revocation but remains partly active.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 25,
+      "implicates": "ethan"
+    },
+    {
+      "id": "e11",
+      "name": "Badge and login mismatch",
+      "description": "Ryan's credentials were used while Ryan's badge was outside the building.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 20,
+      "implicates": "ethan",
+      "requires": [
+        "e02",
+        "e03"
+      ]
+    },
+    {
+      "id": "e12",
+      "name": "Exit interview record",
+      "description": "Ethan's exit interview was held on the third floor, beside the cloakroom.",
+      "type": "DOCUMENT",
+      "reliability": 94,
+      "weight": 28,
+      "implicates": "ethan",
+      "requires": [
+        "e09",
+        "e10"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "08:15 PM",
+      "text": "Maya leaves the office."
+    },
+    {
+      "time": "09:03 PM",
+      "text": "A disabled contractor account attempts to authenticate.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "10:51 PM",
+      "text": "Ryan receives an automated suspicious-login alert."
+    },
+    {
+      "time": "11:29 PM",
+      "text": "The server corridor camera stops recording."
+    },
+    {
+      "time": "11:31 PM",
+      "text": "A badge opens the side entrance.",
+      "hidden": true,
+      "revealed_by": "e03"
+    },
+    {
+      "time": "11:36 PM",
+      "text": "Maya's workstation becomes active.",
+      "hidden": true,
+      "revealed_by": "e01"
+    },
+    {
+      "time": "11:38 PM",
+      "text": "Administrator credentials are used."
+    },
+    {
+      "time": "11:42 PM",
+      "text": "The confidential archive is accessed.",
+      "hidden": true,
+      "revealed_by": "e02"
+    },
+    {
+      "time": "11:44 PM",
+      "text": "A USB device is connected.",
+      "hidden": true,
+      "revealed_by": "e04"
+    },
+    {
+      "time": "11:47 PM",
+      "text": "Temporary files are deleted.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "11:48 PM",
+      "text": "The camera resumes recording."
+    }
+  ],
+  "hints": [
+    "An account is not a person. Ask who could physically be at the keyboard.",
+    "Three people look guilty because their property was used. Find who had access to all three.",
+    "The cloakroom is on the same floor as the room used for exit interviews."
+  ]
+}

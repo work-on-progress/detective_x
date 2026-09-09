@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "case_id": 15,
+  "title": "The Last Broadcast",
+  "subtitle": "Ninety seconds that were never live",
+  "difficulty": "Expert",
+  "culprit_id": "aksel",
+  "setting": "Meridian Radio, Studio 3",
+  "crime": "Blackmail and manslaughter",
+  "window": "10:00 PM - 11:15 PM",
+  "briefing": "A late-night presenter, Nora Bell, dies in her studio during a live broadcast. The programme continues for ninety seconds after the time of death established by the pathologist. Four people were in the building. The studio door logs one entry and one exit, both accounted for. The desk recording is intact and unedited.",
+  "solution": "Aksel Ranta, the station's technical director, had been blackmailing Nora over a recording he held. When she told him on air that she intended to say so, he cut the live feed and substituted ninety seconds of a rehearsal recording, entering the studio during the substitution. The struggle that followed was not intended to kill her. The desk recording is intact because it records the output, not the microphone.",
+  "topics": {
+    "that_hour": "where they were between ten and eleven",
+    "feed": "the ninety second gap",
+    "recording": "the recording Nora mentioned"
+  },
+  "suspects": [
+    {
+      "id": "aksel",
+      "name": "Aksel Ranta",
+      "age": 49,
+      "occupation": "Technical director",
+      "relation": "Controls the transmission chain",
+      "motive": "Held a recording he had been using to control her for a year.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Aksel's pass",
+        "Aksel's desk drive"
+      ],
+      "statements": [
+        {
+          "topic": "that_hour",
+          "claim": "gallery",
+          "question": "Where were you between ten and eleven?",
+          "text": "In the gallery, watching the levels. I did not leave it.",
+          "is_lie": true
+        },
+        {
+          "topic": "feed",
+          "claim": "no_gap",
+          "question": "Was there a break in the live feed?",
+          "text": "There was no break. The output is continuous, and I can prove it.",
+          "unlocked_by": "e04",
+          "is_lie": true
+        },
+        {
+          "topic": "recording",
+          "claim": "unaware",
+          "question": "What recording did she mean?",
+          "text": "I have no idea what she was referring to. She said a great many things on air.",
+          "unlocked_by": "e09",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "producer",
+      "name": "Deirdre Okonjo",
+      "age": 38,
+      "occupation": "Producer",
+      "relation": "In the gallery",
+      "motive": "Had argued with Nora about the programme's direction that evening.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Deirdre's script"
+      ],
+      "statements": [
+        {
+          "topic": "that_hour",
+          "claim": "gallery",
+          "question": "Where were you between ten and eleven?",
+          "text": "In the gallery until twenty past, then the edit suite."
+        },
+        {
+          "topic": "feed",
+          "claim": "odd",
+          "question": "Was there a break in the live feed?",
+          "text": "Something felt wrong around half ten. The room tone changed and then it did not."
+        },
+        {
+          "topic": "recording",
+          "claim": "aware",
+          "question": "What recording did she mean?",
+          "text": "She told me last week that somebody had something of hers. She would not say who."
+        }
+      ]
+    },
+    {
+      "id": "engineer",
+      "name": "Ben Croft",
+      "age": 27,
+      "occupation": "Duty engineer",
+      "relation": "Maintains the studio",
+      "motive": "Was in the studio corridor at the relevant time.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Ben's toolkit"
+      ],
+      "statements": [
+        {
+          "topic": "that_hour",
+          "claim": "corridor",
+          "question": "Where were you between ten and eleven?",
+          "text": "In the corridor and the rack room, chasing an intermittent fault."
+        },
+        {
+          "topic": "feed",
+          "claim": "odd",
+          "question": "Was there a break in the live feed?",
+          "text": "The desk did not show one. But the rack log has something at 10:31."
+        },
+        {
+          "topic": "recording",
+          "claim": "unaware",
+          "question": "What recording did she mean?",
+          "text": "No idea. I keep out of the presenters' business."
+        }
+      ]
+    },
+    {
+      "id": "guest",
+      "name": "Hallam Pike",
+      "age": 44,
+      "occupation": "Studio guest",
+      "relation": "Left at 10:05 PM",
+      "motive": "Nora had criticised him on air three weeks earlier.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Hallam's coat"
+      ],
+      "statements": [
+        {
+          "topic": "that_hour",
+          "claim": "left",
+          "question": "Where were you between ten and eleven?",
+          "text": "I left at five past ten. The door log will show it and so will the taxi."
+        },
+        {
+          "topic": "feed",
+          "claim": "not_present",
+          "question": "Was there a break in the live feed?",
+          "text": "I was in a car by then. I heard the programme on the radio."
+        },
+        {
+          "topic": "recording",
+          "claim": "unaware",
+          "question": "What recording did she mean?",
+          "text": "I do not know and I would rather not speculate."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "studio",
+      "name": "Studio 3",
+      "icon": "[3]",
+      "description": "A live studio, a fader left open, and a chair pushed back hard.",
+      "searchables": [
+        {
+          "id": "desk",
+          "label": "Examine the mixing desk",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "One fader open, one channel muted at source."
+        },
+        {
+          "id": "floors",
+          "label": "Search the studio floor",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "A pass lanyard clip, snapped at the ring."
+        },
+        {
+          "id": "chair",
+          "label": "Examine the chair and table",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "Scuffing consistent with a struggle."
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "name": "Control Gallery",
+      "icon": "[G]",
+      "description": "The room from which the output is controlled and the story is told.",
+      "searchables": [
+        {
+          "id": "output",
+          "label": "Examine the output recording",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "Continuous, unedited, ninety seconds too clean."
+        },
+        {
+          "id": "source",
+          "label": "Compare the source feed",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "The microphone feed and the output diverge at 10:31."
+        },
+        {
+          "id": "rehearsal",
+          "label": "Find the rehearsal recording",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "Ninety seconds of it, played out at 10:31."
+        }
+      ]
+    },
+    {
+      "id": "rack",
+      "name": "Rack Room",
+      "icon": "[R]",
+      "description": "Where the transmission chain physically lives.",
+      "searchables": [
+        {
+          "id": "racklog",
+          "label": "Read the rack log",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "A source switch at 10:31 and back at 10:33."
+        },
+        {
+          "id": "cabling",
+          "label": "Inspect the cabling",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "A patch made recently and removed badly."
+        }
+      ]
+    },
+    {
+      "id": "doorlog",
+      "name": "Door Access System",
+      "icon": "[D]",
+      "description": "One entry, one exit, and a lanyard that stopped working.",
+      "searchables": [
+        {
+          "id": "logs",
+          "label": "Read the studio door log",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "One entry at 10:31, on a pass that then goes quiet."
+        },
+        {
+          "id": "passes",
+          "label": "Check the pass records",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "One pass reported faulty the following morning."
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "name": "Station Archive",
+      "icon": "[A]",
+      "description": "Where recordings that should not exist sometimes do.",
+      "searchables": [
+        {
+          "id": "drive",
+          "label": "Search the technical director's drive",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A recording of Nora, a year old."
+        },
+        {
+          "id": "access",
+          "label": "Check the archive access log",
+          "yields": [
+            "e12"
+          ],
+          "flavour": "Repeated access to one file, by one account."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Muted source channel",
+      "description": "The presenter's microphone was muted at source, not at the desk.",
+      "type": "PHYSICAL",
+      "reliability": 96,
+      "weight": 14,
+      "implicates": "aksel"
+    },
+    {
+      "id": "e02",
+      "name": "Snapped lanyard clip",
+      "description": "A pass lanyard clip, snapped at the ring, on the studio floor.",
+      "type": "PHYSICAL",
+      "reliability": 88,
+      "weight": 20,
+      "implicates": "aksel",
+      "matches": [
+        "Aksel's pass"
+      ]
+    },
+    {
+      "id": "e03",
+      "name": "Signs of a struggle",
+      "description": "Scuffing at the desk consistent with a brief struggle.",
+      "type": "PHYSICAL",
+      "reliability": 94,
+      "weight": 8
+    },
+    {
+      "id": "e04",
+      "name": "Unedited output recording",
+      "description": "The transmitted output is continuous and shows no edit.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 6
+    },
+    {
+      "id": "e05",
+      "name": "Source and output divergence",
+      "description": "The microphone feed and the transmitted output diverge at 10:31.",
+      "type": "DIGITAL",
+      "reliability": 99,
+      "weight": 26,
+      "implicates": "aksel"
+    },
+    {
+      "id": "e06",
+      "name": "Rehearsal substitution",
+      "description": "Ninety seconds of a rehearsal recording were transmitted at 10:31.",
+      "type": "DIGITAL",
+      "reliability": 98,
+      "weight": 30,
+      "implicates": "aksel"
+    },
+    {
+      "id": "e07",
+      "name": "Rack source switch",
+      "description": "The transmission source was switched at 10:31 and back at 10:33.",
+      "type": "DIGITAL",
+      "reliability": 97,
+      "weight": 24,
+      "implicates": "aksel"
+    },
+    {
+      "id": "e08",
+      "name": "Recent patch",
+      "description": "A patch in the transmission chain, made recently and removed carelessly.",
+      "type": "PHYSICAL",
+      "reliability": 84,
+      "weight": 18,
+      "implicates": "engineer",
+      "is_red_herring": true,
+      "cleared_by": "e07"
+    },
+    {
+      "id": "e09",
+      "name": "Archived recording of the presenter",
+      "description": "A year-old private recording of Nora, held on a technical drive.",
+      "type": "DIGITAL",
+      "reliability": 95,
+      "weight": 28,
+      "implicates": "aksel"
+    },
+    {
+      "id": "e10",
+      "name": "Studio door entry",
+      "description": "One entry to the studio at 10:31 PM.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 22,
+      "implicates": "aksel"
+    },
+    {
+      "id": "e11",
+      "name": "Faulty pass report",
+      "description": "A pass was reported faulty the following morning, its clip broken.",
+      "type": "DOCUMENT",
+      "reliability": 90,
+      "weight": 24,
+      "implicates": "aksel"
+    },
+    {
+      "id": "e12",
+      "name": "Archive access pattern",
+      "description": "One account accessed the same archived file repeatedly over a year.",
+      "type": "DIGITAL",
+      "reliability": 96,
+      "weight": 32,
+      "implicates": "aksel",
+      "requires": [
+        "e09",
+        "e05"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "10:00 PM",
+      "text": "The programme goes live."
+    },
+    {
+      "time": "10:05 PM",
+      "text": "The studio guest leaves the building."
+    },
+    {
+      "time": "10:29 PM",
+      "text": "The presenter refers on air to a recording she intends to discuss."
+    },
+    {
+      "time": "10:31 PM",
+      "text": "The transmission source is switched.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "10:31 PM",
+      "text": "The studio door records one entry.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "10:33 PM",
+      "text": "The transmission source is switched back.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "10:34 PM",
+      "text": "The programme continues, apparently normally."
+    },
+    {
+      "time": "11:15 PM",
+      "text": "The presenter is found in the studio."
+    }
+  ],
+  "hints": [
+    "The output recording is intact. Ask what the output is a recording of.",
+    "Ninety seconds of a live programme were not live.",
+    "Somebody had something of hers. Find out where it was kept."
+  ]
+}

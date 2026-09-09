@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detective X — a case dossier that fights back</title>
+<meta name="description" content="Fifteen investigations, played in the browser. The whole game engine is Python, running on WebAssembly, including a machine learning model written from scratch.">
+<meta name="theme-color" content="#33201c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2333201c'/><text y='23' x='16' text-anchor='middle' font-size='19' font-family='monospace' fill='%23d8c69c'>X</text></svg>">
+</head>
+<body>
+
+<div class="boot" id="boot">
+  <div class="boot-inner paper">
+    <h1>DETECTIVE&nbsp;X</h1>
+    <div class="sub">Fifteen cases &middot; Records office</div>
+    <div class="bar"><i id="bootbar"></i></div>
+    <div class="typed muted" id="bootmsg">Opening the records office</div>
+    <p class="typed muted" style="margin-top:1.4rem;font-size:.78rem">
+      The game engine is Python. It is being loaded into this page and run here,
+      so nothing you do is sent anywhere.
+    </p>
+    <noscript>
+      <p class="typed">This game needs JavaScript to load the Python runtime.</p>
+    </noscript>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <div class="topbar" id="topbar" role="tablist"></div>
+  <main class="folder paper" id="folder"></main>
+</div>
+
+<div class="overlay" id="overlay" hidden></div>
+<div id="toasts"></div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>

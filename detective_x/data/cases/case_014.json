@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "case_id": 14,
+  "title": "The Charity Accounts",
+  "subtitle": "Generosity, audited",
+  "difficulty": "Easy",
+  "culprit_id": "trevor",
+  "setting": "The Rowan Trust",
+  "crime": "Fraud",
+  "window": "Over fourteen months",
+  "briefing": "A small children's charity discovers a shortfall of ninety thousand pounds during its annual audit. The money left the account in forty-one payments to a supplier that provided real services, at prices nobody questioned. The trustees are volunteers and the finance function is one part-time member of staff.",
+  "solution": "Trevor Lisle, the part-time finance officer, created a second supplier record with a name one character different from a genuine one, and directed forty-one payments to it. The trustee whose signature appeared on the approvals had signed blank forms in good faith, and the volunteer coordinator's cash handling errors were sloppy but honest.",
+  "topics": {
+    "approvals": "who approved the payments",
+    "supplier": "the supplier records",
+    "reconciliation": "the bank reconciliation"
+  },
+  "suspects": [
+    {
+      "id": "trevor",
+      "name": "Trevor Lisle",
+      "age": 48,
+      "occupation": "Finance officer",
+      "relation": "The only paid finance role",
+      "motive": "Sole control of the supplier list, the payment run and the reconciliation.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Trevor's work laptop",
+        "Trevor's card"
+      ],
+      "statements": [
+        {
+          "topic": "approvals",
+          "claim": "trustee",
+          "question": "Who approved the payments?",
+          "text": "Every one was approved by a trustee. The forms are on file."
+        },
+        {
+          "topic": "supplier",
+          "claim": "genuine",
+          "question": "Are the supplier records sound?",
+          "text": "They are as they have always been. I did not create any of them.",
+          "unlocked_by": "e04",
+          "is_lie": true
+        },
+        {
+          "topic": "reconciliation",
+          "claim": "monthly",
+          "question": "How is the bank reconciled?",
+          "text": "Monthly, by me, and reviewed by the treasurer.",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "marion",
+      "name": "Marion Deeks",
+      "age": 66,
+      "occupation": "Trustee and treasurer",
+      "relation": "Signed the approvals",
+      "motive": "Her signature appears on all forty-one approval forms.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Marion's signature stamp"
+      ],
+      "statements": [
+        {
+          "topic": "approvals",
+          "claim": "signed_blank",
+          "question": "Who approved the payments?",
+          "text": "I signed forms. I am ashamed to say some of them were blank when I signed them."
+        },
+        {
+          "topic": "supplier",
+          "claim": "unaware",
+          "question": "Are the supplier records sound?",
+          "text": "I would not know one supplier from another."
+        },
+        {
+          "topic": "reconciliation",
+          "claim": "reviewed",
+          "question": "How is the bank reconciled?",
+          "text": "Trevor prepares it and I review it. I see a summary, not the detail."
+        }
+      ]
+    },
+    {
+      "id": "volunteer",
+      "name": "Nita Shah",
+      "age": 37,
+      "occupation": "Volunteer coordinator",
+      "relation": "Handles cash donations",
+      "motive": "Two cash reconciliations were out by small amounts.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Nita's cash tin"
+      ],
+      "statements": [
+        {
+          "topic": "approvals",
+          "claim": "not_involved",
+          "question": "Who approved the payments?",
+          "text": "Nothing to do with me. I handle collection tins."
+        },
+        {
+          "topic": "supplier",
+          "claim": "unaware",
+          "question": "Are the supplier records sound?",
+          "text": "I have never seen the supplier list."
+        },
+        {
+          "topic": "reconciliation",
+          "claim": "cash_only",
+          "question": "How is the bank reconciled?",
+          "text": "I reconcile the tins. Twice I have been out by a few pounds and I reported both."
+        }
+      ]
+    },
+    {
+      "id": "chair",
+      "name": "Douglas Mure",
+      "age": 59,
+      "occupation": "Chair of trustees",
+      "relation": "Oversees governance",
+      "motive": "Waived the requirement for a second approver two years ago.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Douglas's diary"
+      ],
+      "statements": [
+        {
+          "topic": "approvals",
+          "claim": "trustee",
+          "question": "Who approved the payments?",
+          "text": "A trustee, under the scheme of delegation. Which I now see was too loose."
+        },
+        {
+          "topic": "supplier",
+          "claim": "unaware",
+          "question": "Are the supplier records sound?",
+          "text": "That is an operational matter. I have to be able to trust it."
+        },
+        {
+          "topic": "reconciliation",
+          "claim": "reviewed",
+          "question": "How is the bank reconciled?",
+          "text": "Monthly. The treasurer reviews it and reports to the board."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "ledger",
+      "name": "Accounting System",
+      "icon": "[A]",
+      "description": "Fourteen months of entries and forty-one payments that look like all the others.",
+      "searchables": [
+        {
+          "id": "payments",
+          "label": "List the payments",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "Regular, modest, and always just under the threshold."
+        },
+        {
+          "id": "suppliers",
+          "label": "Compare the supplier records",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "Two records, one character apart."
+        },
+        {
+          "id": "audittrail",
+          "label": "Read the system audit trail",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "Who created the second record, and when."
+        }
+      ]
+    },
+    {
+      "id": "bankrec",
+      "name": "Bank Records",
+      "icon": "[B]",
+      "description": "Statements, and a destination account that is not what it claims to be.",
+      "searchables": [
+        {
+          "id": "destination",
+          "label": "Trace the destination account",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "A personal account, not a business one."
+        },
+        {
+          "id": "recon",
+          "label": "Examine the reconciliations",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "Prepared and reviewed, but never independently."
+        }
+      ]
+    },
+    {
+      "id": "forms",
+      "name": "Approval Forms",
+      "icon": "[F]",
+      "description": "Forty-one signed forms in a lever arch file.",
+      "searchables": [
+        {
+          "id": "signatures",
+          "label": "Examine the signatures",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "Genuine, every one."
+        },
+        {
+          "id": "blanks",
+          "label": "Look for blank forms",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "Six unused forms, already signed."
+        }
+      ]
+    },
+    {
+      "id": "cash",
+      "name": "Cash Handling",
+      "icon": "[C]",
+      "description": "Tins, counting sheets, and two small discrepancies honestly reported.",
+      "searchables": [
+        {
+          "id": "tins",
+          "label": "Check the cash records",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "Out by a few pounds, twice, both reported."
+        }
+      ]
+    },
+    {
+      "id": "hr",
+      "name": "Personnel Records",
+      "icon": "[P]",
+      "description": "Contracts, bank details, and the coincidences they reveal.",
+      "searchables": [
+        {
+          "id": "details",
+          "label": "Compare the bank details",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "One sort code appears in two places it should not."
+        },
+        {
+          "id": "delegation",
+          "label": "Read the scheme of delegation",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "A waiver, minuted and forgotten."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Payment pattern",
+      "description": "Forty-one payments, each just below the second-approver threshold.",
+      "type": "DOCUMENT",
+      "reliability": 98,
+      "weight": 12,
+      "implicates": "trevor"
+    },
+    {
+      "id": "e02",
+      "name": "Personal destination account",
+      "description": "The supplier payments went to a personal current account.",
+      "type": "DOCUMENT",
+      "reliability": 97,
+      "weight": 22
+    },
+    {
+      "id": "e03",
+      "name": "Genuine signatures",
+      "description": "The trustee's signature on the approval forms is authentic.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 18,
+      "implicates": "marion",
+      "is_red_herring": true,
+      "cleared_by": "e07"
+    },
+    {
+      "id": "e04",
+      "name": "Near-duplicate supplier",
+      "description": "Two supplier records differ by a single character.",
+      "type": "DOCUMENT",
+      "reliability": 99,
+      "weight": 26,
+      "implicates": "trevor"
+    },
+    {
+      "id": "e05",
+      "name": "System audit trail",
+      "description": "The duplicate supplier record was created from the finance officer's account.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 32,
+      "implicates": "trevor"
+    },
+    {
+      "id": "e06",
+      "name": "Unreviewed reconciliation",
+      "description": "The reconciliation is prepared and reviewed without independent checking.",
+      "type": "DOCUMENT",
+      "reliability": 92,
+      "weight": 14,
+      "implicates": "trevor"
+    },
+    {
+      "id": "e07",
+      "name": "Pre-signed blank forms",
+      "description": "Six unused approval forms already carry the treasurer's signature.",
+      "type": "PHYSICAL",
+      "reliability": 94,
+      "weight": 0
+    },
+    {
+      "id": "e08",
+      "name": "Cash discrepancies",
+      "description": "Two small cash discrepancies, both self-reported.",
+      "type": "DOCUMENT",
+      "reliability": 90,
+      "weight": 16,
+      "implicates": "volunteer",
+      "is_red_herring": true,
+      "cleared_by": "e02"
+    },
+    {
+      "id": "e09",
+      "name": "Matching bank details",
+      "description": "The destination sort code matches the finance officer's payroll record.",
+      "type": "DOCUMENT",
+      "reliability": 98,
+      "weight": 34,
+      "implicates": "trevor"
+    },
+    {
+      "id": "e10",
+      "name": "Delegation waiver",
+      "description": "The second-approver requirement was waived two years earlier.",
+      "type": "DOCUMENT",
+      "reliability": 93,
+      "weight": 10,
+      "implicates": "chair",
+      "is_red_herring": true,
+      "cleared_by": "e05"
+    },
+    {
+      "id": "e11",
+      "name": "Supplier correspondence",
+      "description": "The genuine supplier has no record of the duplicated account.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 28,
+      "implicates": "trevor",
+      "requires": [
+        "e04",
+        "e02"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "Month 1",
+      "text": "The second-approver requirement is waived.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "Month 3",
+      "text": "A near-duplicate supplier record is created.",
+      "hidden": true,
+      "revealed_by": "e05"
+    },
+    {
+      "time": "Month 4",
+      "text": "The first payment is made to the new supplier."
+    },
+    {
+      "time": "Month 9",
+      "text": "A cash discrepancy is self-reported.",
+      "hidden": true,
+      "revealed_by": "e08"
+    },
+    {
+      "time": "Month 14",
+      "text": "The annual audit identifies the shortfall."
+    }
+  ],
+  "hints": [
+    "Compare the supplier list against itself, character by character.",
+    "A genuine signature does not mean a genuine approval.",
+    "Follow the money to an account, and the account to a person."
+  ]
+}

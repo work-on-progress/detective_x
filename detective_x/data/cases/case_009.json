@@ -1,0 +1,419 @@
+{
+  "schema_version": 1,
+  "case_id": 9,
+  "title": "The Clinic Ledger",
+  "subtitle": "A drug count that will not reconcile",
+  "difficulty": "Medium",
+  "culprit_id": "sister",
+  "setting": "St Brendan's Community Clinic",
+  "crime": "Systematic theft",
+  "window": "Over five months",
+  "briefing": "A routine inspection finds that the clinic's controlled drug register does not match its stock. The shortfall has been accumulating for five months and is large enough to be criminal rather than clerical. Four members of staff hold cabinet access. All four have signed entries in the register.",
+  "solution": "Sister Anne Cavanagh had been signing out doses for a patient who was discharged in March, using a paper record that was never reconciled against the electronic discharge list. Doctor Whelan's unusual prescribing pattern was a genuine clinical decision, documented in notes nobody had read, and the agency nurse's missing signature was an administrative failure rather than a theft.",
+  "topics": {
+    "cabinet": "who accessed the cabinet",
+    "discharge": "the discharged patient",
+    "register": "the register entries"
+  },
+  "suspects": [
+    {
+      "id": "sister",
+      "name": "Sister Anne Cavanagh",
+      "age": 49,
+      "occupation": "Senior nurse",
+      "relation": "Holds the cabinet key on days",
+      "motive": "Reconciles the paper register against nothing at all.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Anne's key fob",
+        "Anne's clipboard"
+      ],
+      "statements": [
+        {
+          "topic": "cabinet",
+          "claim": "routine",
+          "question": "Who accessed the cabinet?",
+          "text": "All four of us, as the rota requires. Nothing unusual."
+        },
+        {
+          "topic": "discharge",
+          "claim": "unaware",
+          "question": "Was a discharged patient still being dosed?",
+          "text": "Certainly not. We reconcile against the ward list every morning.",
+          "unlocked_by": "e05",
+          "is_lie": true
+        },
+        {
+          "topic": "register",
+          "claim": "accurate",
+          "question": "Are the register entries accurate?",
+          "text": "They are signed and countersigned. I would stake my career on them.",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "whelan",
+      "name": "Dr Patrick Whelan",
+      "age": 57,
+      "occupation": "General practitioner",
+      "relation": "Prescribes for the clinic",
+      "motive": "His prescribing volume is well above the regional average.",
+      "base_suspicion": 40,
+      "belongings": [
+        "Dr Whelan's prescription pad"
+      ],
+      "statements": [
+        {
+          "topic": "cabinet",
+          "claim": "rarely",
+          "question": "Who accessed the cabinet?",
+          "text": "I sign, I do not dispense. My name is on prescriptions, not the cabinet."
+        },
+        {
+          "topic": "discharge",
+          "claim": "unaware",
+          "question": "Was a discharged patient still being dosed?",
+          "text": "If so, nobody told me, and I would want to know."
+        },
+        {
+          "topic": "register",
+          "claim": "not_my_area",
+          "question": "Are the register entries accurate?",
+          "text": "That is nursing's book, not mine."
+        }
+      ]
+    },
+    {
+      "id": "agency",
+      "name": "Kelly Duarte",
+      "age": 28,
+      "occupation": "Agency nurse",
+      "relation": "Covers three nights a week",
+      "motive": "Two of her shifts have register entries with no countersignature.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Kelly's agency badge"
+      ],
+      "statements": [
+        {
+          "topic": "cabinet",
+          "claim": "nights",
+          "question": "Who accessed the cabinet?",
+          "text": "Me, on nights, with whoever is second on. That is the rule."
+        },
+        {
+          "topic": "discharge",
+          "claim": "unaware",
+          "question": "Was a discharged patient still being dosed?",
+          "text": "I dose from the chart in front of me. I do not check discharges."
+        },
+        {
+          "topic": "register",
+          "claim": "gaps",
+          "question": "Are the register entries accurate?",
+          "text": "Two of mine have no countersignature. I raised it and nothing happened."
+        }
+      ]
+    },
+    {
+      "id": "pharm",
+      "name": "Owen Bradach",
+      "age": 43,
+      "occupation": "Dispensing pharmacist",
+      "relation": "Orders the stock",
+      "motive": "Placed three replacement orders without a matching usage record.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Owen's order book"
+      ],
+      "statements": [
+        {
+          "topic": "cabinet",
+          "claim": "deliveries",
+          "question": "Who accessed the cabinet?",
+          "text": "I load it on delivery days. I do not remove from it."
+        },
+        {
+          "topic": "discharge",
+          "claim": "unaware",
+          "question": "Was a discharged patient still being dosed?",
+          "text": "I would not see that. I see quantities, not patients."
+        },
+        {
+          "topic": "register",
+          "claim": "mismatch",
+          "question": "Are the register entries accurate?",
+          "text": "They cannot be. I have ordered more than the register says was used."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "cabinet",
+      "name": "Controlled Drug Cabinet",
+      "icon": "[K]",
+      "description": "A steel cabinet, a paper register, and a fob reader that logs everything.",
+      "searchables": [
+        {
+          "id": "registerbook",
+          "label": "Read the paper register",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "Neat, complete, and internally consistent."
+        },
+        {
+          "id": "fob",
+          "label": "Pull the fob access log",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Times that do not always match the register."
+        },
+        {
+          "id": "count",
+          "label": "Count the remaining stock",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "The shortfall, quantified."
+        }
+      ]
+    },
+    {
+      "id": "ward",
+      "name": "Ward Records",
+      "icon": "[W]",
+      "description": "Charts, discharge lists, and two systems that were never made to talk.",
+      "searchables": [
+        {
+          "id": "discharges",
+          "label": "Compare the discharge list",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "One name that keeps receiving doses."
+        },
+        {
+          "id": "charts",
+          "label": "Read the drug charts",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "Entries in a familiar hand, after a familiar date."
+        }
+      ]
+    },
+    {
+      "id": "dispensary",
+      "name": "Dispensary",
+      "icon": "[D]",
+      "description": "Deliveries in, prescriptions out, and an order book with strong opinions.",
+      "searchables": [
+        {
+          "id": "orders",
+          "label": "Examine the order book",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "Three replacement orders with no usage to justify them."
+        },
+        {
+          "id": "scripts",
+          "label": "Review the prescribing pattern",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "High volume, and a reason nobody has read."
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "name": "Clinical Notes Archive",
+      "icon": "[N]",
+      "description": "Where the reason for anything is written down and then never opened again.",
+      "searchables": [
+        {
+          "id": "clinical",
+          "label": "Read the clinical justification",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "A documented decision, fully reasoned."
+        },
+        {
+          "id": "incident",
+          "label": "Search the incident reports",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A countersignature failure, reported twice."
+        }
+      ]
+    },
+    {
+      "id": "rota",
+      "name": "Staff Rota Office",
+      "icon": "[R]",
+      "description": "Who was on, when, and who was supposed to be watching them.",
+      "searchables": [
+        {
+          "id": "rotafile",
+          "label": "Cross-check the rota",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "Every unexplained entry falls in one shift pattern."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Paper register",
+      "description": "The paper register is complete, consistent, and reconciles with itself.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 6
+    },
+    {
+      "id": "e02",
+      "name": "Fob access log",
+      "description": "Cabinet access times that do not always correspond to register entries.",
+      "type": "DIGITAL",
+      "reliability": 96,
+      "weight": 18,
+      "implicates": "sister"
+    },
+    {
+      "id": "e03",
+      "name": "Stock shortfall",
+      "description": "The physical count is substantially below the register's figure.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 8
+    },
+    {
+      "id": "e04",
+      "name": "Post-discharge dosing entries",
+      "description": "Doses recorded for a patient discharged in March, in one hand.",
+      "type": "DOCUMENT",
+      "reliability": 97,
+      "weight": 32,
+      "implicates": "sister"
+    },
+    {
+      "id": "e05",
+      "name": "Discharge list",
+      "description": "The patient in question was discharged on the eleventh of March.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 20,
+      "implicates": "sister"
+    },
+    {
+      "id": "e06",
+      "name": "Unjustified replacement orders",
+      "description": "Three replacement orders with no corresponding recorded usage.",
+      "type": "DOCUMENT",
+      "reliability": 92,
+      "weight": 16,
+      "implicates": "pharm",
+      "is_red_herring": true,
+      "cleared_by": "e03"
+    },
+    {
+      "id": "e07",
+      "name": "High prescribing volume",
+      "description": "Dr Whelan prescribes well above the regional average.",
+      "type": "DOCUMENT",
+      "reliability": 90,
+      "weight": 20,
+      "implicates": "whelan",
+      "is_red_herring": true,
+      "cleared_by": "e08"
+    },
+    {
+      "id": "e08",
+      "name": "Clinical justification",
+      "description": "A documented, reasoned clinical basis for the prescribing pattern.",
+      "type": "DOCUMENT",
+      "reliability": 98,
+      "weight": 0
+    },
+    {
+      "id": "e09",
+      "name": "Countersignature incident reports",
+      "description": "The agency nurse reported missing countersignatures twice.",
+      "type": "DOCUMENT",
+      "reliability": 94,
+      "weight": 15,
+      "implicates": "agency",
+      "is_red_herring": true,
+      "cleared_by": "e02"
+    },
+    {
+      "id": "e10",
+      "name": "Rota cross-check",
+      "description": "Every unexplained cabinet access falls on the senior nurse's shift pattern.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 26,
+      "implicates": "sister"
+    },
+    {
+      "id": "e11",
+      "name": "Handwriting on the charts",
+      "description": "The post-discharge entries are in the senior nurse's hand.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 30,
+      "implicates": "sister",
+      "requires": [
+        "e04",
+        "e10"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "11 March",
+      "text": "A patient is discharged from the clinic.",
+      "hidden": true,
+      "revealed_by": "e05"
+    },
+    {
+      "time": "14 March",
+      "text": "Dosing entries continue for that patient.",
+      "hidden": true,
+      "revealed_by": "e04"
+    },
+    {
+      "time": "April",
+      "text": "The first replacement order is placed."
+    },
+    {
+      "time": "May",
+      "text": "An agency nurse reports missing countersignatures.",
+      "hidden": true,
+      "revealed_by": "e09"
+    },
+    {
+      "time": "June",
+      "text": "A second replacement order is placed."
+    },
+    {
+      "time": "July",
+      "text": "A routine inspection identifies the shortfall."
+    }
+  ],
+  "hints": [
+    "The register reconciles with itself. Compare it against something else.",
+    "Two suspicious patterns have documented explanations. Find the one that does not.",
+    "Ask whether every patient being dosed was still a patient."
+  ]
+}

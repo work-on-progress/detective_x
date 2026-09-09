@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "case_id": 1,
+  "title": "The Missing Diamond",
+  "subtitle": "Blackwood Mansion, a private party, and an empty case",
+  "difficulty": "Medium",
+  "culprit_id": "sophia",
+  "setting": "Blackwood Mansion",
+  "crime": "Theft",
+  "window": "10:15 PM - 10:45 PM",
+  "briefing": "The Blackwood family is hosting a private celebration. The Blackwood Diamond, valued at around two million dollars, sits in a protected exhibition case. At 10:15 PM it is confirmed present. At 10:45 PM a member of staff finds the case open and the stone gone. There is no forced entry, and only a handful of people had access to that wing of the house.",
+  "solution": "Sophia Miller left the dining hall at 10:26 PM, used a panel code she had memorised while filing Mr Blackwood's insurance paperwork, and opened the display without triggering an alarm. A button tore from her coat as she reached into the case. The camera outage that made Marcus Reed look guilty was an automated firmware restart, scheduled months earlier and pure coincidence.",
+  "topics": {
+    "location_2230": "location at 10:30 PM",
+    "last_saw": "when they last saw the diamond",
+    "panel_code": "knowledge of the panel code"
+  },
+  "suspects": [
+    {
+      "id": "adrian",
+      "name": "Adrian Blackwood",
+      "age": 31,
+      "occupation": "Business executive",
+      "relation": "Son of the owner",
+      "motive": "Carries significant private debt and knows exactly what the stone is worth.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Adrian's dinner jacket"
+      ],
+      "statements": [
+        {
+          "topic": "location_2230",
+          "claim": "dining_hall",
+          "question": "Where were you at 10:30 PM?",
+          "text": "In the dining hall, arguing with my father about money. Half the room heard it."
+        },
+        {
+          "topic": "last_saw",
+          "claim": "before_dinner",
+          "question": "When did you last see the diamond?",
+          "text": "Before dinner. I walked guests past the case at eight."
+        },
+        {
+          "topic": "panel_code",
+          "claim": "no",
+          "question": "Do you know the code for the display panel?",
+          "text": "No. My father never trusted me with it, which tells you something."
+        }
+      ]
+    },
+    {
+      "id": "sophia",
+      "name": "Sophia Miller",
+      "age": 28,
+      "occupation": "Personal assistant",
+      "relation": "Works directly for Mr Blackwood",
+      "motive": "Was told last week that her contract would not be renewed.",
+      "base_suspicion": 20,
+      "belongings": [
+        "Sophia's grey coat",
+        "Sophia's handbag"
+      ],
+      "statements": [
+        {
+          "topic": "location_2230",
+          "claim": "dining_hall",
+          "question": "Where were you at 10:30 PM?",
+          "text": "In the dining room. I did not leave it once between ten and the alarm.",
+          "is_lie": true
+        },
+        {
+          "topic": "last_saw",
+          "claim": "ten_fifteen",
+          "question": "When did you last see the diamond?",
+          "text": "At quarter past ten. I checked the room before the toast."
+        },
+        {
+          "topic": "panel_code",
+          "claim": "no",
+          "question": "Do you know the code for the display panel?",
+          "text": "Certainly not. That is Mr Reed's department, not mine.",
+          "is_lie": true
+        },
+        {
+          "topic": "coat",
+          "claim": "intact",
+          "question": "Is there a button missing from your coat?",
+          "text": "I really could not say. Coats lose buttons. Is that a crime now?",
+          "unlocked_by": "e01"
+        }
+      ]
+    },
+    {
+      "id": "marcus",
+      "name": "Marcus Reed",
+      "age": 42,
+      "occupation": "Security supervisor",
+      "relation": "Responsible for the house system",
+      "motive": "Understands the alarm system better than anyone in the building.",
+      "base_suspicion": 50,
+      "belongings": [
+        "Marcus's uniform jacket"
+      ],
+      "statements": [
+        {
+          "topic": "location_2230",
+          "claim": "security_room",
+          "question": "Where were you at 10:30 PM?",
+          "text": "In the security room watching the feeds go dark one after another."
+        },
+        {
+          "topic": "last_saw",
+          "claim": "ten_fifteen",
+          "question": "When did you last see the diamond?",
+          "text": "On the monitor at ten fifteen. Then the corridor camera dropped."
+        },
+        {
+          "topic": "panel_code",
+          "claim": "yes",
+          "question": "Do you know the code for the display panel?",
+          "text": "Of course I do. So does the insurer, and so does the file it is written in."
+        }
+      ]
+    },
+    {
+      "id": "elena",
+      "name": "Elena Stone",
+      "age": 35,
+      "occupation": "Art dealer",
+      "relation": "Family friend",
+      "motive": "Made two private offers for the diamond in the last year, both refused.",
+      "base_suspicion": 20,
+      "belongings": [
+        "Elena's evening dress"
+      ],
+      "statements": [
+        {
+          "topic": "location_2230",
+          "claim": "dining_hall",
+          "question": "Where were you at 10:30 PM?",
+          "text": "Talking to the Hallorans by the window. Ask them, they never stop talking."
+        },
+        {
+          "topic": "last_saw",
+          "claim": "before_dinner",
+          "question": "When did you last see the diamond?",
+          "text": "At eight, with everyone else. I have seen it a hundred times."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "exhibition",
+      "name": "Exhibition Room",
+      "icon": "[D]",
+      "description": "The display case stands open. There is no broken glass and no mark on the lock.",
+      "searchables": [
+        {
+          "id": "case",
+          "label": "Examine the display case",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "The lid is undamaged. Whoever opened this was invited to."
+        },
+        {
+          "id": "floor",
+          "label": "Search the floor",
+          "yields": [
+            "e01",
+            "e04"
+          ],
+          "flavour": "You go over the carpet on your hands and knees."
+        },
+        {
+          "id": "panel",
+          "label": "Inspect the access panel",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "The keypad is clean. Too clean, in fact."
+        },
+        {
+          "id": "furniture",
+          "label": "Search the nearby furniture",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Behind the console table, dust and one clear print."
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security Room",
+      "icon": "[S]",
+      "description": "Six monitors, one of them showing a grey rectangle where the corridor should be.",
+      "searchables": [
+        {
+          "id": "logs",
+          "label": "Pull the camera logs",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "The outage is neatly bracketed."
+        },
+        {
+          "id": "firmware",
+          "label": "Check the system maintenance record",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "A scheduled task, months old, buried in the maintenance list."
+        }
+      ]
+    },
+    {
+      "id": "dining",
+      "name": "Dining Hall",
+      "icon": "[H]",
+      "description": "Forty covers, half-finished wine, and nobody willing to say who left the room.",
+      "searchables": [
+        {
+          "id": "guests",
+          "label": "Speak to the guests",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "One of the waiting staff remembers more than the guests do."
+        }
+      ]
+    },
+    {
+      "id": "corridor",
+      "name": "Guest Corridor",
+      "icon": "[C]",
+      "description": "The connecting passage between the dining hall and the exhibition wing.",
+      "searchables": [
+        {
+          "id": "runner",
+          "label": "Examine the carpet runner",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A thread of grey wool caught on the brass stair rod."
+        }
+      ]
+    },
+    {
+      "id": "entrance",
+      "name": "Main Entrance",
+      "icon": "[E]",
+      "description": "The front of the house, where the caterers came and went all evening.",
+      "searchables": [
+        {
+          "id": "register",
+          "label": "Check the arrivals register",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "Everyone signed in. Nobody signed out early."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Broken silver button",
+      "description": "A small silver button, torn rather than dropped, found beside the display.",
+      "type": "PHYSICAL",
+      "reliability": 92,
+      "weight": 25,
+      "implicates": "sophia",
+      "matches": [
+        "Sophia's grey coat"
+      ]
+    },
+    {
+      "id": "e02",
+      "name": "Partial fingerprint",
+      "description": "A partial print lifted from the underside of the console table.",
+      "type": "PHYSICAL",
+      "reliability": 88,
+      "weight": 20,
+      "implicates": "sophia"
+    },
+    {
+      "id": "e03",
+      "name": "Undamaged case lock",
+      "description": "The display lock was opened with the correct code, not forced.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 10
+    },
+    {
+      "id": "e04",
+      "name": "Grey wool fibre",
+      "description": "A short grey fibre on the carpet directly under the case.",
+      "type": "PHYSICAL",
+      "reliability": 75,
+      "weight": 15,
+      "implicates": "sophia",
+      "matches": [
+        "Sophia's grey coat"
+      ]
+    },
+    {
+      "id": "e05",
+      "name": "Camera outage log",
+      "description": "The corridor camera stopped recording at 10:24 PM.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 15,
+      "implicates": "marcus",
+      "is_red_herring": true,
+      "cleared_by": "e06"
+    },
+    {
+      "id": "e06",
+      "name": "Firmware restart record",
+      "description": "The outage was an automated firmware restart scheduled in March.",
+      "type": "DOCUMENT",
+      "reliability": 100,
+      "weight": 0
+    },
+    {
+      "id": "e07",
+      "name": "Waiter's statement",
+      "description": "A waiter saw Sophia leave the dining hall shortly after ten twenty.",
+      "type": "TESTIMONY",
+      "reliability": 72,
+      "weight": 20,
+      "implicates": "sophia"
+    },
+    {
+      "id": "e08",
+      "name": "Panel access record",
+      "description": "The panel was opened at 10:31 PM using Mr Blackwood's stored code.",
+      "type": "DIGITAL",
+      "reliability": 100,
+      "weight": 25,
+      "implicates": "sophia"
+    },
+    {
+      "id": "e09",
+      "name": "Thread on the stair rod",
+      "description": "Grey wool snagged on brass, at coat height, in the corridor.",
+      "type": "PHYSICAL",
+      "reliability": 80,
+      "weight": 10,
+      "implicates": "sophia"
+    },
+    {
+      "id": "e10",
+      "name": "Adrian's debt notice",
+      "description": "A final demand addressed to Adrian, dated three weeks ago.",
+      "type": "DOCUMENT",
+      "reliability": 85,
+      "weight": 12,
+      "implicates": "adrian",
+      "is_red_herring": true,
+      "cleared_by": "e08"
+    },
+    {
+      "id": "e11",
+      "name": "Insurance file annotation",
+      "description": "Sophia's handwriting appears beside the stored panel code in the insurance file.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 30,
+      "implicates": "sophia",
+      "requires": [
+        "e08",
+        "e07"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "10:00 PM",
+      "text": "The party moves through to dinner."
+    },
+    {
+      "time": "10:15 PM",
+      "text": "The diamond is confirmed in the display."
+    },
+    {
+      "time": "10:22 PM",
+      "text": "Adrian enters the dining hall."
+    },
+    {
+      "time": "10:24 PM",
+      "text": "The exhibition corridor camera stops recording."
+    },
+    {
+      "time": "10:27 PM",
+      "text": "Sophia is seen leaving the dining hall.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "10:31 PM",
+      "text": "The exhibition access panel is opened.",
+      "hidden": true,
+      "revealed_by": "e08"
+    },
+    {
+      "time": "10:34 PM",
+      "text": "Marcus attempts to restart the camera."
+    },
+    {
+      "time": "10:36 PM",
+      "text": "Sophia returns to the dining area.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "10:45 PM",
+      "text": "The diamond is reported missing."
+    }
+  ],
+  "hints": [
+    "Compare the statements against the timeline between 10:20 and 10:35.",
+    "The camera outage may not have been caused by a person at all.",
+    "Somebody wrote the panel code down. Find out who read that file."
+  ]
+}

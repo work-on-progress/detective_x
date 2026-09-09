@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "case_id": 11,
+  "title": "The Understudy",
+  "subtitle": "One rope, one cue, one person who knew both",
+  "difficulty": "Easy",
+  "culprit_id": "gareth",
+  "setting": "The Lyceum Playhouse",
+  "crime": "Attempted murder",
+  "window": "7:40 PM - 8:05 PM",
+  "briefing": "During a preview performance, a counterweight bar falls onto the stage a metre from the lead actress, Delia Mount. Nobody is hurt. The rigging is inspected and the securing pin is found on the fly floor, removed rather than sheared. Only someone who knew the cue sheet would know when Delia stood on that mark.",
+  "solution": "Gareth Tull, the deputy stage manager, pulled the pin during the interval. He calls the cues, so he knew to the second where Delia would be standing. His motive was the understudy, Kirsty, to whom he had promised the part. The frayed rope that suggested neglect was on a different line entirely, and the missing maintenance signature was a clerical lapse from two months earlier.",
+  "topics": {
+    "interval": "where they were during the interval",
+    "cues": "who knows the cue sheet",
+    "flyfloor": "access to the fly floor"
+  },
+  "suspects": [
+    {
+      "id": "gareth",
+      "name": "Gareth Tull",
+      "age": 34,
+      "occupation": "Deputy stage manager",
+      "relation": "Calls the show",
+      "motive": "Promised the lead role to the understudy, whom he is involved with.",
+      "base_suspicion": 25,
+      "belongings": [
+        "Gareth's headset",
+        "Gareth's cue book"
+      ],
+      "statements": [
+        {
+          "topic": "interval",
+          "claim": "prompt_corner",
+          "question": "Where were you during the interval?",
+          "text": "At the prompt corner, marking up act two. I never left it.",
+          "is_lie": true
+        },
+        {
+          "topic": "cues",
+          "claim": "several",
+          "question": "Who knows the cue sheet?",
+          "text": "Anyone on comms. It is not a secret document."
+        },
+        {
+          "topic": "flyfloor",
+          "claim": "restricted",
+          "question": "Who can reach the fly floor?",
+          "text": "Flys and technical staff. It is signed and restricted.",
+          "unlocked_by": "e04",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "kirsty",
+      "name": "Kirsty Vale",
+      "age": 26,
+      "occupation": "Understudy",
+      "relation": "Would play the lead",
+      "motive": "Directly benefits if the lead cannot perform.",
+      "base_suspicion": 45,
+      "belongings": [
+        "Kirsty's dressing gown"
+      ],
+      "statements": [
+        {
+          "topic": "interval",
+          "claim": "dressing_room",
+          "question": "Where were you during the interval?",
+          "text": "In the dressing room with two other people. Ask them."
+        },
+        {
+          "topic": "cues",
+          "claim": "roughly",
+          "question": "Who knows the cue sheet?",
+          "text": "I know the blocking. I do not know the technical cues."
+        },
+        {
+          "topic": "flyfloor",
+          "claim": "no_access",
+          "question": "Who can reach the fly floor?",
+          "text": "Not performers. I have never been up there."
+        }
+      ]
+    },
+    {
+      "id": "harry",
+      "name": "Harry Dunn",
+      "age": 58,
+      "occupation": "Head flyman",
+      "relation": "Operates the rigging",
+      "motive": "Responsible for the maintenance record that has a gap in it.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Harry's tool belt"
+      ],
+      "statements": [
+        {
+          "topic": "interval",
+          "claim": "fly_floor",
+          "question": "Where were you during the interval?",
+          "text": "On the fly floor, resetting for act two. That is my job."
+        },
+        {
+          "topic": "cues",
+          "claim": "several",
+          "question": "Who knows the cue sheet?",
+          "text": "Everyone on comms hears the cues called."
+        },
+        {
+          "topic": "flyfloor",
+          "claim": "restricted",
+          "question": "Who can reach the fly floor?",
+          "text": "Restricted, but the door is propped half the night. It should not be."
+        }
+      ]
+    },
+    {
+      "id": "delia",
+      "name": "Delia Mount",
+      "age": 41,
+      "occupation": "Lead actress",
+      "relation": "The intended target",
+      "motive": "Reported a stalker to the theatre a month ago and was not taken seriously.",
+      "base_suspicion": 10,
+      "belongings": [
+        "Delia's costume"
+      ],
+      "statements": [
+        {
+          "topic": "interval",
+          "claim": "stage_left",
+          "question": "Where were you during the interval?",
+          "text": "Stage left, in the wings, going over the second act with the director."
+        },
+        {
+          "topic": "cues",
+          "claim": "roughly",
+          "question": "Who knows the cue sheet?",
+          "text": "I know my own marks. That is all any of us know."
+        },
+        {
+          "topic": "flyfloor",
+          "claim": "no_access",
+          "question": "Who can reach the fly floor?",
+          "text": "I would not know how to get up there."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "stage",
+      "name": "The Stage",
+      "icon": "[S]",
+      "description": "A counterweight bar embedded in the boards, a metre from a chalked mark.",
+      "searchables": [
+        {
+          "id": "bar",
+          "label": "Examine the fallen bar",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "Clean release. Nothing sheared."
+        },
+        {
+          "id": "mark",
+          "label": "Examine the chalk mark",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "Delia's mark for the act two opening."
+        }
+      ]
+    },
+    {
+      "id": "flyfloor",
+      "name": "Fly Floor",
+      "icon": "[F]",
+      "description": "Ropes, weights, and a door that is supposed to be locked.",
+      "searchables": [
+        {
+          "id": "pin",
+          "label": "Search for the securing pin",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "On the floor, straight, unbent."
+        },
+        {
+          "id": "door",
+          "label": "Check the fly floor door",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "Propped open with a fire extinguisher."
+        },
+        {
+          "id": "rope",
+          "label": "Inspect the ropes",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "One frayed line, on a different bar entirely."
+        }
+      ]
+    },
+    {
+      "id": "prompt",
+      "name": "Prompt Corner",
+      "icon": "[P]",
+      "description": "The desk from which the show is called.",
+      "searchables": [
+        {
+          "id": "cuebook",
+          "label": "Examine the cue book",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "Act two annotated in a fresh hand."
+        },
+        {
+          "id": "comms",
+          "label": "Pull the comms recording",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "Fifty seconds of silence on one channel."
+        }
+      ]
+    },
+    {
+      "id": "office",
+      "name": "Stage Door Office",
+      "icon": "[O]",
+      "description": "The book that records everyone who came and went.",
+      "searchables": [
+        {
+          "id": "signin",
+          "label": "Read the sign-in book",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "One name signed in for the interval and not out."
+        },
+        {
+          "id": "maint",
+          "label": "Check the maintenance record",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "A gap, dated two months ago."
+        }
+      ]
+    },
+    {
+      "id": "dressing",
+      "name": "Dressing Rooms",
+      "icon": "[D]",
+      "description": "Where three people can account for each other, and one cannot.",
+      "searchables": [
+        {
+          "id": "alibis",
+          "label": "Take the interval statements",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "Two independent accounts, consistent."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "Cleanly released bar",
+      "description": "The counterweight bar released cleanly. Nothing failed.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 8
+    },
+    {
+      "id": "e02",
+      "name": "Chalked mark",
+      "description": "The bar fell a metre from the lead's act two opening mark.",
+      "type": "PHYSICAL",
+      "reliability": 95,
+      "weight": 10
+    },
+    {
+      "id": "e03",
+      "name": "Removed securing pin",
+      "description": "The pin was withdrawn by hand, not sheared or bent.",
+      "type": "PHYSICAL",
+      "reliability": 97,
+      "weight": 18,
+      "implicates": "gareth"
+    },
+    {
+      "id": "e04",
+      "name": "Propped fly floor door",
+      "description": "The restricted door was propped open throughout the interval.",
+      "type": "PHYSICAL",
+      "reliability": 88,
+      "weight": 12
+    },
+    {
+      "id": "e05",
+      "name": "Frayed rope",
+      "description": "A frayed line, on a bar that had nothing to do with the incident.",
+      "type": "PHYSICAL",
+      "reliability": 82,
+      "weight": 20,
+      "implicates": "harry",
+      "is_red_herring": true,
+      "cleared_by": "e01"
+    },
+    {
+      "id": "e06",
+      "name": "Annotated cue book",
+      "description": "Act two cues re-marked in fresh ink during the interval.",
+      "type": "DOCUMENT",
+      "reliability": 90,
+      "weight": 24,
+      "implicates": "gareth"
+    },
+    {
+      "id": "e07",
+      "name": "Comms silence",
+      "description": "The deputy stage manager's channel is silent for fifty seconds.",
+      "type": "DIGITAL",
+      "reliability": 93,
+      "weight": 26,
+      "implicates": "gareth"
+    },
+    {
+      "id": "e08",
+      "name": "Sign-in book",
+      "description": "One name signed in for the interval with no corresponding exit.",
+      "type": "DOCUMENT",
+      "reliability": 86,
+      "weight": 14,
+      "implicates": "gareth"
+    },
+    {
+      "id": "e09",
+      "name": "Maintenance gap",
+      "description": "An unsigned maintenance inspection from two months earlier.",
+      "type": "DOCUMENT",
+      "reliability": 84,
+      "weight": 16,
+      "implicates": "harry",
+      "is_red_herring": true,
+      "cleared_by": "e03"
+    },
+    {
+      "id": "e10",
+      "name": "Dressing room accounts",
+      "description": "Two independent witnesses place the understudy in the dressing room.",
+      "type": "TESTIMONY",
+      "reliability": 88,
+      "weight": 0
+    },
+    {
+      "id": "e11",
+      "name": "Message to the understudy",
+      "description": "A message promising the part, sent an hour before the performance.",
+      "type": "DIGITAL",
+      "reliability": 94,
+      "weight": 30,
+      "implicates": "gareth",
+      "requires": [
+        "e07",
+        "e06"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "07:40 PM",
+      "text": "The interval begins."
+    },
+    {
+      "time": "07:46 PM",
+      "text": "The fly floor door is propped open.",
+      "hidden": true,
+      "revealed_by": "e04"
+    },
+    {
+      "time": "07:52 PM",
+      "text": "One comms channel goes silent for fifty seconds.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "07:58 PM",
+      "text": "The cue book is annotated.",
+      "hidden": true,
+      "revealed_by": "e06"
+    },
+    {
+      "time": "08:00 PM",
+      "text": "The interval ends."
+    },
+    {
+      "time": "08:05 PM",
+      "text": "The counterweight bar falls."
+    }
+  ],
+  "hints": [
+    "The bar did not fail. Somebody released it.",
+    "Ask who knew, to the second, where the actress would be standing.",
+    "Fifty seconds of silence on a channel that never stops talking."
+  ]
+}

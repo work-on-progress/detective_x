@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "detective": {
+    "name": "Fixture",
+    "xp": 640,
+    "cases_won": 2,
+    "cases_lost": 1,
+    "best_score": 812,
+    "completed": [1, 11],
+    "failed": [6]
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "case_id": 12,
+  "title": "The Kiln Room",
+  "subtitle": "A fire that started twice",
+  "difficulty": "Medium",
+  "culprit_id": "marguerite",
+  "setting": "Halden Ceramics Works",
+  "crime": "Arson and insurance fraud",
+  "window": "11:20 PM - 12:40 AM",
+  "briefing": "A fire destroys the glazing shed at a ceramics works. The insurance claim is substantial and the business was three months from closure. The fire investigator's report finds two separate points of origin, which rules out an accident. Four people held keys to the site.",
+  "solution": "Marguerite Halden set the fire herself to recover the value of a business she could not sell. She used the kiln's own timer to create a delayed second point of origin, giving herself a clean alibi at a restaurant eleven miles away. The night watchman's late arrival and the electrician's unfinished rewiring were both genuine and both irrelevant.",
+  "topics": {
+    "that_night": "where they were that night",
+    "keys": "who holds a site key",
+    "kiln": "the kiln timer"
+  },
+  "suspects": [
+    {
+      "id": "marguerite",
+      "name": "Marguerite Halden",
+      "age": 57,
+      "occupation": "Owner",
+      "relation": "Runs the works",
+      "motive": "The business was three months from closure and heavily insured.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Marguerite's key ring",
+        "Marguerite's car"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "restaurant",
+          "question": "Where were you that night?",
+          "text": "At the Fern and Anchor from nine until eleven. Eleven miles away."
+        },
+        {
+          "topic": "keys",
+          "claim": "four",
+          "question": "Who holds a site key?",
+          "text": "Four of us. Myself, Joe, the electrician, and the kiln technician."
+        },
+        {
+          "topic": "kiln",
+          "claim": "off",
+          "question": "Was the kiln in use?",
+          "text": "It was shut down for the weekend. It had been cold since Friday.",
+          "unlocked_by": "e04",
+          "is_lie": true
+        }
+      ]
+    },
+    {
+      "id": "joe",
+      "name": "Joe Merrick",
+      "age": 63,
+      "occupation": "Night watchman",
+      "relation": "Should have been on site",
+      "motive": "Arrived forty minutes late and did not report it.",
+      "base_suspicion": 45,
+      "belongings": [
+        "Joe's torch"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "late",
+          "question": "Where were you that night?",
+          "text": "I was late. Forty minutes. I have never been late in nine years and I am sick about it."
+        },
+        {
+          "topic": "keys",
+          "claim": "four",
+          "question": "Who holds a site key?",
+          "text": "Four keys. Mine is on my belt and always has been."
+        },
+        {
+          "topic": "kiln",
+          "claim": "off",
+          "question": "Was the kiln in use?",
+          "text": "Cold since Friday. I checked it on my Saturday round."
+        }
+      ]
+    },
+    {
+      "id": "electrician",
+      "name": "Sam Iqbal",
+      "age": 41,
+      "occupation": "Electrician",
+      "relation": "Rewiring the glazing shed",
+      "motive": "The rewiring was unfinished and left exposed connections.",
+      "base_suspicion": 35,
+      "belongings": [
+        "Sam's tool case"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home from six. My last visit to site was Thursday."
+        },
+        {
+          "topic": "keys",
+          "claim": "four",
+          "question": "Who holds a site key?",
+          "text": "I hold one while the job runs. I hand it back at the end."
+        },
+        {
+          "topic": "kiln",
+          "claim": "not_my_area",
+          "question": "Was the kiln in use?",
+          "text": "I do not touch the kiln circuits. That is a separate contract."
+        }
+      ]
+    },
+    {
+      "id": "technician",
+      "name": "Ruth Okoye",
+      "age": 33,
+      "occupation": "Kiln technician",
+      "relation": "Maintains the kilns",
+      "motive": "Programmed the kiln controller the week before.",
+      "base_suspicion": 30,
+      "belongings": [
+        "Ruth's service log"
+      ],
+      "statements": [
+        {
+          "topic": "that_night",
+          "claim": "home",
+          "question": "Where were you that night?",
+          "text": "At home. I finished the Friday service at four and left."
+        },
+        {
+          "topic": "keys",
+          "claim": "four",
+          "question": "Who holds a site key?",
+          "text": "Four. Mine has not left the works, I keep it in the plant room."
+        },
+        {
+          "topic": "kiln",
+          "claim": "programmed",
+          "question": "Was the kiln in use?",
+          "text": "I left a schedule on the controller. It should not have fired without a manual start."
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "shed",
+      "name": "Glazing Shed",
+      "icon": "[G]",
+      "description": "What is left of it. Two areas of deep charring, ten metres apart.",
+      "searchables": [
+        {
+          "id": "origin1",
+          "label": "Examine the first point of origin",
+          "yields": [
+            "e01"
+          ],
+          "flavour": "Near the door, an accelerant pattern."
+        },
+        {
+          "id": "origin2",
+          "label": "Examine the second point of origin",
+          "yields": [
+            "e02"
+          ],
+          "flavour": "At the kiln wall, and it started later."
+        },
+        {
+          "id": "wiring",
+          "label": "Inspect the new wiring",
+          "yields": [
+            "e03"
+          ],
+          "flavour": "Unfinished, but isolated at the board."
+        }
+      ]
+    },
+    {
+      "id": "kilnroom",
+      "name": "Kiln Room",
+      "icon": "[K]",
+      "description": "The controller survived. It remembers everything.",
+      "searchables": [
+        {
+          "id": "controller",
+          "label": "Read the kiln controller",
+          "yields": [
+            "e04"
+          ],
+          "flavour": "A manual start, programmed for 12:15 AM."
+        },
+        {
+          "id": "servicelog",
+          "label": "Read the service log",
+          "yields": [
+            "e05"
+          ],
+          "flavour": "Ruth's Friday entry, and one after it."
+        }
+      ]
+    },
+    {
+      "id": "gatehouse",
+      "name": "Gatehouse",
+      "icon": "[H]",
+      "description": "Where the watchman signs on and the barrier records every vehicle.",
+      "searchables": [
+        {
+          "id": "signon",
+          "label": "Check the sign-on record",
+          "yields": [
+            "e06"
+          ],
+          "flavour": "Forty minutes late, and honest about it."
+        },
+        {
+          "id": "barrier",
+          "label": "Read the barrier log",
+          "yields": [
+            "e07"
+          ],
+          "flavour": "One vehicle in at 11:20 PM and out at 11:34 PM."
+        }
+      ]
+    },
+    {
+      "id": "office",
+      "name": "Works Office",
+      "icon": "[O]",
+      "description": "Accounts, correspondence, and an insurance file that has been updated recently.",
+      "searchables": [
+        {
+          "id": "accounts",
+          "label": "Examine the accounts",
+          "yields": [
+            "e08"
+          ],
+          "flavour": "Three months of runway, at best."
+        },
+        {
+          "id": "insurance",
+          "label": "Read the insurance file",
+          "yields": [
+            "e09"
+          ],
+          "flavour": "Cover increased seven weeks ago."
+        }
+      ]
+    },
+    {
+      "id": "restaurant",
+      "name": "The Fern and Anchor",
+      "icon": "[F]",
+      "description": "Eleven miles away, with a card machine that timestamps everything.",
+      "searchables": [
+        {
+          "id": "bill",
+          "label": "Check the bill",
+          "yields": [
+            "e10"
+          ],
+          "flavour": "Paid at 10:52 PM, not eleven."
+        },
+        {
+          "id": "staffr",
+          "label": "Speak to the staff",
+          "yields": [
+            "e11"
+          ],
+          "flavour": "They remember the table leaving early."
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e01",
+      "name": "First point of origin",
+      "description": "An accelerant pattern near the shed door, ignited first.",
+      "type": "PHYSICAL",
+      "reliability": 100,
+      "weight": 10
+    },
+    {
+      "id": "e02",
+      "name": "Delayed second origin",
+      "description": "A second origin at the kiln wall that began roughly an hour later.",
+      "type": "PHYSICAL",
+      "reliability": 97,
+      "weight": 14
+    },
+    {
+      "id": "e03",
+      "name": "Unfinished wiring",
+      "description": "The new wiring is incomplete but isolated at the distribution board.",
+      "type": "PHYSICAL",
+      "reliability": 92,
+      "weight": 20,
+      "implicates": "electrician",
+      "is_red_herring": true,
+      "cleared_by": "e01"
+    },
+    {
+      "id": "e04",
+      "name": "Kiln controller record",
+      "description": "A manual start was programmed for 12:15 AM.",
+      "type": "DIGITAL",
+      "reliability": 99,
+      "weight": 30,
+      "implicates": "marguerite"
+    },
+    {
+      "id": "e05",
+      "name": "Service log entry",
+      "description": "An entry after the technician's Friday service, in a different hand.",
+      "type": "DOCUMENT",
+      "reliability": 90,
+      "weight": 24,
+      "implicates": "marguerite"
+    },
+    {
+      "id": "e06",
+      "name": "Late sign-on",
+      "description": "The watchman signed on forty minutes late and recorded it himself.",
+      "type": "DOCUMENT",
+      "reliability": 94,
+      "weight": 18,
+      "implicates": "joe",
+      "is_red_herring": true,
+      "cleared_by": "e07"
+    },
+    {
+      "id": "e07",
+      "name": "Barrier vehicle log",
+      "description": "A vehicle entered at 11:20 PM and left at 11:34 PM.",
+      "type": "DIGITAL",
+      "reliability": 98,
+      "weight": 26,
+      "implicates": "marguerite"
+    },
+    {
+      "id": "e08",
+      "name": "Accounts position",
+      "description": "The works had three months of runway remaining.",
+      "type": "DOCUMENT",
+      "reliability": 96,
+      "weight": 12,
+      "implicates": "marguerite"
+    },
+    {
+      "id": "e09",
+      "name": "Increased cover",
+      "description": "The insurance cover was increased seven weeks before the fire.",
+      "type": "DOCUMENT",
+      "reliability": 95,
+      "weight": 28,
+      "implicates": "marguerite"
+    },
+    {
+      "id": "e10",
+      "name": "Restaurant bill",
+      "description": "The bill was settled at 10:52 PM, not at eleven.",
+      "type": "DOCUMENT",
+      "reliability": 97,
+      "weight": 22,
+      "implicates": "marguerite"
+    },
+    {
+      "id": "e11",
+      "name": "Restaurant staff account",
+      "description": "Staff recall the table leaving noticeably early.",
+      "type": "TESTIMONY",
+      "reliability": 76,
+      "weight": 14,
+      "implicates": "marguerite"
+    },
+    {
+      "id": "e12",
+      "name": "Vehicle identification",
+      "description": "The barrier record identifies the owner's car.",
+      "type": "DIGITAL",
+      "reliability": 96,
+      "weight": 32,
+      "implicates": "marguerite",
+      "requires": [
+        "e07",
+        "e10"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "10:52 PM",
+      "text": "A restaurant bill is settled eleven miles away.",
+      "hidden": true,
+      "revealed_by": "e10"
+    },
+    {
+      "time": "11:20 PM",
+      "text": "A vehicle enters the works.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "11:34 PM",
+      "text": "The vehicle leaves the works.",
+      "hidden": true,
+      "revealed_by": "e07"
+    },
+    {
+      "time": "11:40 PM",
+      "text": "The first fire is set near the shed door."
+    },
+    {
+      "time": "12:00 AM",
+      "text": "The night watchman signs on, forty minutes late.",
+      "hidden": true,
+      "revealed_by": "e06"
+    },
+    {
+      "time": "12:15 AM",
+      "text": "The kiln controller executes a programmed start.",
+      "hidden": true,
+      "revealed_by": "e04"
+    },
+    {
+      "time": "12:40 AM",
+      "text": "The fire is reported."
+    }
+  ],
+  "hints": [
+    "Two points of origin means two decisions, not one accident.",
+    "One of them started an hour after the other. Ask what could do that on a timer.",
+    "Check the alibi's timestamp rather than the alibi's owner."
+  ]
+}
